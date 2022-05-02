@@ -3038,7 +3038,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jpmorganchase/theme-editor@>=1.0.0, @jpmorganchase/theme-editor@workspace:tooling/theme-editor":
+"@jpmorganchase/theme-editor@*, @jpmorganchase/theme-editor@>=1.0.0, @jpmorganchase/theme-editor@workspace:tooling/theme-editor":
   version: 0.0.0-use.local
   resolution: "@jpmorganchase/theme-editor@workspace:tooling/theme-editor"
   dependencies:
@@ -12957,6 +12957,16 @@ __metadata:
   checksum: 4090bd66193693dcda605e44d6b8715d8fb5c92a67acd57826e55cf816a342f550d57e5638f822b39366e1b2fdb244e99b3068a37213aa1d6c1bf602b8fde5ae
   languageName: node
   linkType: hard
+
+"figma-style-generator@workspace:tooling/figma-style-generator":
+  version: 0.0.0-use.local
+  resolution: "figma-style-generator@workspace:tooling/figma-style-generator"
+  dependencies:
+    "@figma/plugin-typings": "*"
+    "@jpmorganchase/theme-editor": "*"
+    typescript: "*"
+  languageName: unknown
+  linkType: soft
 
 "figures@npm:^3.0.0, figures@npm:^3.2.0":
   version: 3.2.0
@@ -24953,7 +24963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.6.4":
+"typescript@npm:*, typescript@npm:4.6.4":
   version: 4.6.4
   resolution: "typescript@npm:4.6.4"
   bin:
@@ -24963,7 +24973,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.6.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@*#~builtin<compat/typescript>, typescript@patch:typescript@4.6.4#~builtin<compat/typescript>":
   version: 4.6.4
   resolution: "typescript@patch:typescript@npm%3A4.6.4#~builtin<compat/typescript>::version=4.6.4&hash=bda367"
   bin:

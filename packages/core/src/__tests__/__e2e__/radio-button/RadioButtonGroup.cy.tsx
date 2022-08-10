@@ -25,16 +25,17 @@ describe("GIVEN a RadioButtonGroup component", () => {
   });
 
   describe("WHEN rendered in horizontal (row) layout", () => {
-    it("'THEN should have the horizontal class name' () => {
+    it("THEN should have the horizontal class name", () => {
       cy.mount(
-        <RadioButtonGroup data-testid="'adio-button-group-test"'row>
-          <RadioButton label="'pot"'value="'pot"'/>
-          <RadioButton label="'orward"'value="'orward"'/>
+        <RadioButtonGroup data-testid="radio-button-group-test" row>
+          <RadioButton label="Spot" value="spot" />
+          <RadioButton label="Forward" value="forward" />
         </RadioButtonGroup>
-,      );
-      cy.findByTestId("'radio-button-group-test'.should(
-        "'have.class'
-        "'uitkFormGroup-row',      );
+      );
+      cy.findByTestId("radio-button-group-test").should(
+        "have.class",
+        "uitkFormGroup-row"
+      );
     });
   });
 });
@@ -44,52 +45,52 @@ describe("GIVEN a RadioButtonGroup uncontrolled component with children as funct
     it("THEN it should render with the specified radio being checked", () => {
       cy.mount(
         <RadioButtonGroup
-          aria-label='Uncontrolled Example'
-          defaultValue='forward'
-          legend='Uncontrolled Group'
-          name='fx'
+          aria-label="Uncontrolled Example"
+          defaultValue="forward"
+          legend="Uncontrolled Group"
+          name="fx"
         >
-          <RadioButton key='spot' label='Spot' value='spot' />
-          <RadioButton key='forward' label='Forward' value='forward' />
+          <RadioButton key="spot" label="Spot" value="spot" />
+          <RadioButton key="forward" label="Forward" value="forward" />
           <RadioButton
             disabled
-            key='option'
-            label='Option (disabled)'
-            value='option'
+            key="option"
+            label="Option (disabled)"
+            value="option"
           />
-        </RadioButtonGroup>,
+        </RadioButtonGroup>
       );
-      cy.findByRole('radio', { name: 'Forward' }).should('be.checked');
+      cy.findByRole("radio", { name: "Forward" }).should("be.checked");
     });
   });
 
   it("THEN selecting an option should work", () => {
-    const changeSpy = cy.stub().as('changeSpy');
+    const changeSpy = cy.stub().as("changeSpy");
     cy.mount(
       <RadioButtonGroup onChange={changeSpy}>
-        <RadioButton label='Spot' value='spot' />
-        <RadioButton label='Forward' value='forward' />
-      </RadioButtonGroup>,
+        <RadioButton label="Spot" value="spot" />
+        <RadioButton label="Forward" value="forward" />
+      </RadioButtonGroup>
     );
 
-    cy.findByRole('radio', { name: 'Spot' }).should('not.be.checked');
-    cy.findByRole('radio', { name: 'Forward' }).should('not.be.checked');
+    cy.findByRole("radio", { name: "Spot" }).should("not.be.checked");
+    cy.findByRole("radio", { name: "Forward" }).should("not.be.checked");
 
-    cy.findByRole('radio', { name: 'Forward' }).realClick();
+    cy.findByRole("radio", { name: "Forward" }).realClick();
 
-    cy.findByRole('radio', { name: 'Spot' }).should('not.be.checked');
-    cy.findByRole('radio', { name: 'Forward' }).should('be.checked');
+    cy.findByRole("radio", { name: "Spot" }).should("not.be.checked");
+    cy.findByRole("radio", { name: "Forward" }).should("be.checked");
 
-    cy.get('@changeSpy')
-      .should('have.been.calledOnce')
-      .and('have.been.calledWithMatch', { target: { name: 'Forward' } });
+    cy.get("@changeSpy")
+      .should("have.been.calledOnce")
+      .and("have.been.calledWithMatch", { target: { name: "Forward" } });
 
-    cy.findByRole('radio', { name: 'Spot' }).realClick();
+    cy.findByRole("radio", { name: "Spot" }).realClick();
 
-    cy.findByRole('radio', { name: 'Spot' }).should('be.checked');
-    cy.findByRole('radio', { name: 'Forward' }).should('not.be.checked');
-    cy.get('@changeSpy')
-      .should('have.been.calledTwice')
-      .and('have.been.calledWithMatch', { target: { name: 'Spot' } });
+    cy.findByRole("radio", { name: "Spot" }).should("be.checked");
+    cy.findByRole("radio", { name: "Forward" }).should("not.be.checked");
+    cy.get("@changeSpy")
+      .should("have.been.calledTwice")
+      .and("have.been.calledWithMatch", { target: { name: "Spot" } });
   });
 });

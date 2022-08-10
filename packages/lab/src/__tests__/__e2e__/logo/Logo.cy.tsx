@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import { Logo } from "../../logo";
+import { Logo } from "@jpmorganchase/uitk-lab";
 
 const CustomLogoImage = ({ src }: any) => <div>{src}</div>;
 
@@ -7,21 +6,25 @@ describe("GIVEN a logo", () => {
   const appTitle = "Test App Title";
   const src = "test-src.svg";
 
-  beforeEach(() => {
-    render(
+  test("logo image is rendered", () => {
+    cy.mount(
       <Logo
         src={src}
         appTitle={appTitle}
         LogoImageComponent={CustomLogoImage}
       />
     );
-  });
-
-  test("logo image is rendered", () => {
-    expect(screen.getByText(src)).toBeInTheDocument();
+    cy.findByText(src).should("exist");
   });
 
   test("appTitle is rendered", () => {
-    expect(screen.getByText(appTitle)).toBeInTheDocument();
+    cy.mount(
+      <Logo
+        src={src}
+        appTitle={appTitle}
+        LogoImageComponent={CustomLogoImage}
+      />
+    );
+    cy.findByText(appTitle).should("exist");
   });
 });

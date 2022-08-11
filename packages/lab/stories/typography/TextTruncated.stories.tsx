@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Text, P, Span, Div } from "@jpmorganchase/uitk-lab";
+import { Text, Div } from "@jpmorganchase/uitk-lab";
 
 export default {
   title: "Lab/Typography",
@@ -30,15 +29,12 @@ const TextTruncatedExamples: ComponentStory<typeof Text> = () => {
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
-        // width: "70vw",
       }}
     >
       <div style={box}>
         <strong>Default</strong>
         <br />
-        elementType - div
-        <br />
-        truncate - false
+        truncate = false
         <br />
         <strong>Wraps</strong>
       </div>
@@ -51,28 +47,25 @@ const TextTruncatedExamples: ComponentStory<typeof Text> = () => {
       </div>
 
       <div style={box}>
-        elementType - div
+        truncate = true
         <br />
-        truncate - true
-        <br />
-        parent height - 40px
+        parent height = 40px
         <br />
         <strong>shows Tooltip</strong>
       </div>
-      <div style={{ ...box, height: 40 }}>
-        <Div truncate={true}>
-          And when she rose up and the king's son looked at her face he
-          recognized the beautiful maiden who had danced with him and cried,
-          that is the true bride.
-        </Div>
-      </div>
-
       <div style={box}>
-        elementType - span
+        <div style={{ height: 40 }}>
+          <Div truncate={true}>
+            And when she rose up and the king's son looked at her face he
+            recognized the beautiful maiden who had danced with him and cried,
+            that is the true bride.
+          </Div>
+        </div>
+      </div>
+      <div style={box}>
+        truncate = true
         <br />
-        truncate - true
-        <br />
-        maxRows - 2
+        maxRows = 2
         <br />
         <strong>shows Tooltip</strong>
       </div>

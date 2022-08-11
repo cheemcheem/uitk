@@ -24,21 +24,21 @@ const withBaseName = makePrefixer("uitkText");
 interface TextPropsBase<E extends ElementType> {
   /**
    * Represents the semantic element tag name as a string.
-   * Defaults to 'div'
+   * Defaults to `div`
    */
   elementType?: ElementType;
   /**
-   * Number of rows to display when truncate=true.
+   * Number of rows to display when `truncate = true`.
    */
   maxRows?: number;
   /**
-   * If 'true', component will apply the logic for truncation. If 'false' then text will display entirely.
-   * Defaults to 'false'
+   * If `true`, component will apply the logic for truncation. If `false` then text will display entirely.
+   * Defaults to `false`
    */
   truncate?: boolean;
   /**
-   * If 'true' it will show the Tooltip only if the text is truncated.
-   * Defaults to 'true'
+   * If `true` it will show the Tooltip only if the text is truncated.
+   * Defaults to `true`
    */
   showTooltip?: boolean;
   /**
@@ -55,11 +55,11 @@ interface TextPropsBase<E extends ElementType> {
   style?: CSSProperties;
   /**
    * Callback function triggered when overflow state changes.
-   * @params [boolean] isOverflowed
+   * @params [boolean] isTuncated
    */
-  onOverflowChange?: (isOverflowed: boolean) => unknown;
+  onOverflowChange?: (isTuncated: boolean) => unknown;
   /**
-   * Match styling to a specified heading
+   * Match styling to another element type
    */
   styleAs?: "h1" | "h2" | "h3" | "h4" | "label";
 }

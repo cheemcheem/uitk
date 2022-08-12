@@ -32,34 +32,30 @@ interface TextPropsBase<E extends ElementType> {
    */
   maxRows?: number;
   /**
-   * If `true`, component will apply the logic for truncation. If `false` then text will display entirely.
+   * If `true`, component will apply the logic for truncation.
    * Defaults to `false`
    */
   truncate?: boolean;
   /**
-   * If `true` it will show the Tooltip only if the text is truncated.
+   * If `true` it will show the Tooltip when the text is truncated.
    * Defaults to `true`
    */
   showTooltip?: boolean;
   /**
-   * Customise Tooltip
+   * Customise Tooltip props.
    */
   tooltipProps?: Partial<TooltipProps>;
   /**
-   * Customize the Tooltip text
+   * Customize the Tooltip text.
    */
   tooltipText?: string;
-  /**
-   * Customise styling.
-   */
-  style?: CSSProperties;
   /**
    * Callback function triggered when overflow state changes.
    * @params [boolean] isTuncated
    */
   onOverflowChange?: (isTuncated: boolean) => unknown;
   /**
-   * Match styling to another element type
+   * Match styling to another element type.
    */
   styleAs?: "h1" | "h2" | "h3" | "h4" | "label";
 }

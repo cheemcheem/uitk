@@ -69,8 +69,8 @@ const TextTruncatedExamples: ComponentStory<typeof Text> = () => {
     </GridLayout>
   );
 };
-export const TextTruncated = TextTruncatedExamples.bind({});
-TextTruncated.parameters = {
+export const TruncatedTextExample = TextTruncatedExamples.bind({});
+TruncatedTextExample.parameters = {
   controls: {
     exclude: excludeProps,
   },

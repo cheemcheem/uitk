@@ -138,6 +138,57 @@ label.uitkText,
   font-weight: var(--uitk-text-figure3-fontWeight);
 }
 
+/* TK1 backwards compat */
 .backwardsCompat .uitkText {
   line-height: 1.3;
+}
+
+/* Not changed for HD and MD, defined to avoid nesting issues */
+.uitk-density-high,
+.uitk-density-medium {
+  --backwardsCompat-text-h1-fontSize: var(--uitk-text-h1-fontSize);
+  --backwardsCompat-text-h2-fontSize: var(--uitk-text-h2-fontSize);
+  --backwardsCompat-text-h3-fontSize: var(--uitk-text-h3-fontSize);
+  --backwardsCompat-text-caption-fontSize: var(--uitk-text-caption-fontSize);
+  --backwardsCompat-text-help-fontSize: var(--uitk-text-help-fontSize);
+}
+
+.uitk-density-touch {
+  --backwardsCompat-text-h1-fontSize: 40px;
+  --backwardsCompat-text-h2-fontSize: 28px;
+  --backwardsCompat-text-h3-fontSize: 22px;
+  --backwardsCompat-text-caption-fontSize: 12px;
+  --backwardsCompat-text-help-fontSize: 12px;
+}
+
+.uitk-density-low {
+  --backwardsCompat-text-h1-fontSize: 31px;
+  --backwardsCompat-text-h2-fontSize: var(--uitk-text-h2-fontSize);
+  --backwardsCompat-text-h3-fontSize: var(--uitk-text-h3-fontSize);
+  --backwardsCompat-text-caption-fontSize: 11px;
+  --backwardsCompat-text-help-fontSize: 11px;
+}
+
+.backwardsCompat h1.uitkText,
+.backwardsCompat .uitkText-h1.uitkText {
+  font-size: var(--backwardsCompat-text-h1-fontSize);
+}
+
+.backwardsCompat h2.uitkText,
+.backwardsCompat .uitkText-h2.uitkText {
+  font-size: var(--backwardsCompat-text-h2-fontSize);
+}
+
+.backwardsCompat h3.uitkText,
+.backwardsCompat .uitkText-h3.uitkText {
+  font-size: var(--backwardsCompat-text-h3-fontSize);
+}
+
+.backwardsCompat label.uitkText,
+.backwardsCompat .uitkText-label {
+  font-size: var(--backwardsCompat-text-caption-fontSize);
+}
+
+.backwardsCompat .uitkText-helpText.uitkText {
+  font-size: var(--backwardsCompat-text-help-fontSize);
 }

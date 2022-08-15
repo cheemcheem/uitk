@@ -256,3 +256,19 @@
   --pill-background: var(--uitk-color-grey-500);
   --pill-background-hover: var(--uitk-color-grey-500);
 }
+
+.uitk-density-high {
+  --backwardsCompat-pill-fontSize: 10px;
+}
+.uitk-density-medium {
+  --backwardsCompat-pill-fontSize: 11px;
+}
+.uitk-density-low {
+  --backwardsCompat-pill-fontSize: 11px;
+}
+.uitk-density-touch {
+  --backwardsCompat-pill-fontSize: 12px;
+}
+.backwardsCompat.uitkPill {
+  --uitkPill-fontSize: var(--backwardsCompat-pill-fontSize);
+}

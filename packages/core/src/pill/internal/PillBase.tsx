@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { Button, ButtonProps } from "../../button";
+import { DivButton } from "../../button";
 import { useTooltip, useTooltipContext } from "../../tooltip";
 import {
   makePrefixer,
@@ -93,12 +93,6 @@ export interface PillBaseProps extends HTMLAttributes<HTMLDivElement> {
    */
   onDelete?: ReactEventHandler<HTMLElement>;
 }
-
-const DivButton = forwardRef<HTMLDivElement, ButtonProps<"div">>(
-  function DivButton({ elementType = "div", ...props }, ref) {
-    return <Button elementType={elementType} {...props} ref={ref} />;
-  }
-);
 
 export const PillBase = forwardRef(function PillBase(
   {

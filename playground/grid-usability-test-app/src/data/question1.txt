@@ -1,0 +1,13 @@
+You are about to see a screen with a equity trade blotter. When you do, and without interacting with the blotter; Can you tell me what price was executed for the Tesla stock? We will be timing you.																ANSWER
+
+RFE ID	Booking Status	Order ID	Trader ID	Send	Modified	Client Name	Symbol	Name	Side	 Qty	Ex Qty	Remaining	Cancelled	Price	Ex AvgPx	Order Status	Comments	Pos
+179918311		DFGH-5655294	roski	10:42:14	11:02:59	Blackrock	MSFT	Microsoft Corp	Buy	110,308	30000	80,308		291.91	291.9	Live		Open
+188824436		DFGH-5498053	lpaul	10:41:50	10:41:50	AQR Capital Management	AAPL	Apple Inc	Buy	26,729	0	26,729		172.1		Live	TWAP please	Open
+371437824		DFGH-6342062	rsmit	10:39:33	10:39:33	Bridgewater Associates	TSLA	Tesla Inc	Buy	24,553	0	24,553		900.09		Live		Open
+800121810		DFGH-4460948	roski	10:35:19	10:49:33	Two Sigma Investments	GOOG	Alphabet Inc Class C	Sell	107,623	0	107,623		122.65		Live		Open
+809602188		DFGH-2880092	rsmit	10:34:08	10:34:08	Two Sigma Investments	AMZN	Amazon.com Inc	Buy	77,325	0	77,325		143.55		Rejected
+715017685		DFGH-7010380	popet	10:30:54	11:08:36	Renaissance Technologies	JPM	JPMorgan Chase & Co	Sell	420,863	100000	320,863		122.13	122.13	Live		Open
+274301779	Booked	DFGH-5374603	roski	10:29:19	11:06:44	Man Group	NVDA	NVIDIA Corp	Sell	251,750	0	0	251,750	187.09		Cancelled
+569684843	Booked	DFGH-9063894	roski	10:24:47	10:24:47	Elliott Management	FB	Facebook Inc A	Buy	33,795	33,795	0		180.5	180.5	Completed		Close
+396830427	Booked	DFGH-9234001	jamoe	10:24:34	10:24:34	Two Sigma Investments	TWTR	Twitter Inc	Sell	567,103	567,103	0		44.26	44.265	Completed		Close
+269760267	Booked	DFGH-7591328	zdans	10:23:47	10:23:47	Millennium Management	NFLX	Netflix Inc	Buy	189,330	189,330	0		249.3	249	Completed		Open

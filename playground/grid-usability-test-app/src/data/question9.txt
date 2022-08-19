@@ -1,0 +1,14 @@
+Finally without scrolling can you tell me which columns are pinned?						PINNED
+Now scroll, was that what you expected?
+
+Order ID	Side	 Qty	Symbol	Name	Client Name	Status	Exec. Qty	Remaining	Cancelled	Price	Exec. AvgPx	Comments	Trader ID	Modified
+DFGH-5655294	Buy	110,308	MSFT	Microsoft Corp	Blackrock	Live	30000	80,308		291.91	291.9		roski	11:02:59
+DFGH-5498053	Buy	26,729	AAPL	Apple Inc	AQR Capital Management	Live	0	26,729		172.1		TWAP please	lpaul	10:41:50
+DFGH-6342062	Buy	24,553	TSLA	Tesla Inc	Bridgewater Associates	Live	0	24,553		900.09			rsmit	10:39:33
+DFGH-4460948	Sell	107,623	GOOG	Alphabet Inc Class C	Two Sigma Investments	Live	0	107,623		122.65			roski	10:49:33
+DFGH-2880092	Buy	77,325	AMZN	Amazon.com Inc	Two Sigma Investments	Rejected	0	77,325		143.55			rsmit	10:34:08
+DFGH-7010380	Sell	420,863	JPM	JPMorgan Chase & Co	Renaissance Technologies	Live	100000	320,863		122.13	122.13		popet	11:08:36
+DFGH-5374603	Sell	251,750	NVDA	NVIDIA Corp	Man Group	Cancelled	0	0	251,750	187.09			roski	11:06:44
+DFGH-9063894	Buy	33,795	FB	Facebook Inc A	Elliott Management	Completed	33,795	0		180.5	180.5		roski	10:24:47
+DFGH-9234001	Sell	567,103	TWTR	Twitter Inc	Two Sigma Investments	Completed	567,103	0		44.26	44.265		jamoe	10:24:34
+DFGH-7591328	Buy	189,330	NFLX	Netflix Inc	Millennium Management	Completed	189,330	0		249.3	249		zdans	10:23:47

@@ -9,57 +9,100 @@ if (!fs.existsSync(dataFolder)) {
   return 1;
 }
 
-async function processFile(fileName) {
+let questIndex = 1;
+function processFile(fileName) {
   const data = fs.readFileSync(fileName);
   const lines = data.toString().split("\n");
-  const questionText = lines[0];
+  const output = [];
+
+  const questionText = [];
+
+  let lineIndex = 0;
+  while (lines[lineIndex] !== "") {
+    questionText.push(lines[lineIndex]);
+    lineIndex++;
+  }
+  output.push(`export const questionText${questIndex} = [`);
+  questionText.forEach((s, j) => {
+    s = s.split("\t")[0];
+    s = s.replace('"', '\\"');
+    output.push(`\t"${s}"${j < questionText.length - 1 ? "," : ""}`);
+  });
+  output.push(`];`);
+  output.push("");
+
+  while (lines[lineIndex] === "") {
+    lineIndex++;
+  }
+
   const rxQuote = /(?<=^|\t)([^\t\n]*)(?=$|\t)/g;
   const rxTab = /\s+/g;
   const rxTrailComma = /,(?=$)/g;
+  const rxValidPropName = /^\w[\w\d]*$/;
 
-  if (lines.length < 3) {
-    return;
-  }
-
-  const output = [];
-
-  let propNames = lines[2].split("\t");
+  let propNames = lines[lineIndex].split("\t");
+  lineIndex++;
   propNames = propNames.map((s) => {
     const words = s
       .trim()
       .split(/\s/)
       .map((x) => x.trim());
     const b = [words[0].toLowerCase()];
-    for (let i = 1; i < words.length; ++i) {
-      let w = words[i];
+    for (let j = 1; j < words.length; ++j) {
+      let w = words[j];
       w = [w[0].toUpperCase(), w.slice(1).toLowerCase()].join("");
       b.push(w);
     }
-    return b.join("");
+    let propName = b.join("").replace(".", "");
+    if (!rxValidPropName.test(propName)) {
+      propName = `"${propName}"`;
+    }
+    return propName;
   });
-  console.log(propNames);
+  output.push(`export interface ExampleRow${questIndex} {`);
+  propNames.forEach((p) => {
+    output.push(`\t${p}: string,`);
+  });
+  output.push(`}`);
+  output.push("");
 
-  for (let i = 3; i < lines.length; ++i) {
-    const rowText = lines[i].trim();
+  output.push(`export const exampleRows${questIndex} = [`);
+  while (lineIndex < lines.length) {
+    const rowText = lines[lineIndex].trim();
     if (rowText.length === 0) {
+      lineIndex++;
       continue;
     }
-    let row = rowText.replaceAll(rxQuote, '"$1",');
-    row = row.replaceAll(rxTab, " ");
-    row = row.replaceAll(rxTrailComma, "");
-    row = ["[", row, "]"].join("");
-    console.log(`${row}`);
+    output.push(`\t{`);
+    let row = rowText.trim().split("\t");
+    row = row.map((v) => `"${v.trim()}"`);
+    for (let i = 0; i < row.length; i++) {
+      output.push(`\t\t${propNames[i]}: ${row[i]},`);
+    }
+    output.push(`\t},`);
+    lineIndex++;
   }
-  // txt = fs.readFileSync(fileName);
-  // console.log(`${txt}`);
+  output.push(`];`);
+  questIndex++;
+  return output;
 }
+
+const indexTs = [];
 
 const fileNames = fs.readdirSync(dataFolder);
 for (let i = 0; i < fileNames.length; ++i) {
   const fileName = path.join(dataFolder, fileNames[i]);
   console.log(`Processing "${fileName}"`);
-  processFile(fileName);
+  const ts = processFile(fileName);
+  const tsFileName = path.join(
+    destFolder,
+    fileNames[i].replace(/\.txt$/g, ".ts")
+  );
+  fs.writeFileSync(tsFileName, ts.join("\n"));
+  indexTs.push(`export * from "./${fileNames[i].replace(/\.txt$/g, "")}";`);
 }
+
+fs.writeFileSync(path.join(destFolder, "index.ts"), indexTs.join("\n"));
 
 console.log("Done");
 return 0;

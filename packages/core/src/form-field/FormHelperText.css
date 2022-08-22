@@ -39,11 +39,15 @@
   font-style: var(--uitkFormFieldHelperText-fontStyle, var(--uitk-text-help-fontStyle));
   letter-spacing: var(--uitkFormFieldHelperText-letterSpacing, 0);
   line-height: var(--uitkFormFieldHelperText-lineHeight, var(--uitk-text-base-lineHeight));
-  min-height: var(--uitkFormFieldHelperText-minHeight, var(--uitk-text-caption-minHeight));
+  min-height: var(--uitkFormFieldHelperText-minHeight, var(--uitk-text-help-minHeight));
   margin-bottom: var(--uitkFormFieldHelperText-marginBottom, 0);
   margin-top: var(--uitkFormFieldHelperText-marginTop, var(--formField-withHelperText-marginTop));
   opacity: var(--uitkFormFieldHelperText-opacity, 1);
   padding-left: var(--uitkFormFieldHelperText-paddingLeft, var(--uitk-size-unit));
   padding-right: var(--uitkFormFieldHelperText-paddingRight, var(--uitk-size-unit));
   transform: var(--uitkFormFieldHelperText-transform, var(--formField-helperText-transform, none));
+}
+
+.backwardsCompat.uitkFormField {
+  --uitkFormFieldHelperText-fontSize: var(--backwardsCompat-text-help-fontSize);
 }

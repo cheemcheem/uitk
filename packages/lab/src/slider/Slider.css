@@ -210,3 +210,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.backwardsCompat.uitkSlider {
+  --uitkSlider-label-font-size: var(--backwardsCompat-text-caption-fontSize);
+}

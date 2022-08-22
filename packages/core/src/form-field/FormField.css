@@ -26,7 +26,6 @@
   --formField-focused-outlineStyle: var(--uitkFormField-focused-outlineStyle, var(--uitk-focused-outlineStyle));
   --formField-focused-outlineWidth: var(--uitkFormField-focused-outlineWidth, var(--uitk-focused-outlineWidth));
   --formField-helperText-height: 0px;
-  --formField-helperText-lineHeight: var(--uitk-text-base-lineHeight);
 }
 
 .uitkEmphasisLow.uitkFormField {
@@ -73,8 +72,8 @@
 .uitkFormField-withHelperText {
   --formField-activationIndicator-offsetBottom: calc(var(--formField-helperText-marginTop) + var(--uitkFormFieldHelperText-lineHeight, var(--formField-helperText-height)));
   --formField-withHelperText-marginTop: var(--formField-helperText-marginTop);
-  --formField-helperText-baseHeight: calc(var(--formField-helperText-lineHeight) * var(--uitk-text-help-fontSize));
-  --formField-helperText-calculatedHeight: max(var(--uitk-text-caption-minHeight), var(--formField-helperText-baseHeight));
+  --formField-helperText-baseHeight: calc(var(--uitk-text-base-lineHeight) * var(--uitkFormField-helperText-fontSize, var(--uitk-text-help-fontSize)));
+  --formField-helperText-calculatedHeight: max(var(--uitk-text-help-minHeight), var(--formField-helperText-baseHeight));
   --formField-helperText-height: calc(var(--formField-helperText-calculatedHeight) + var(--formField-withHelperText-marginTop));
 }
 
@@ -259,20 +258,7 @@
   background: var(--uitkFormField-background, var(--formField-background));
 }
 
-.uitk-density-high {
-  --backwardsCompat-formField-helperText-fontSize: 10px;
-}
-.uitk-density-medium {
-  --backwardsCompat-formField-helperText-fontSize: 11px;
-}
-.uitk-density-low {
-  --backwardsCompat-formField-helperText-fontSize: 11px;
-}
-.uitk-density-touch {
-  --backwardsCompat-formField-helperText-fontSize: 12px;
-}
-
 /* TK1 backwards compat styling */
 .backwardsCompat.uitkFormField {
-  --uitkFormFieldHelperText-fontSize: var(--backwardsCompat-formField-helperText-fontSize);
+  --uitkFormField-helperText-fontSize: var(--backwardsCompat-text-help-fontSize);
 }

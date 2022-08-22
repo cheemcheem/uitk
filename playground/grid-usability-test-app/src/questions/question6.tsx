@@ -217,6 +217,7 @@ export const TableExample6 = () => {
           id="progress"
           defaultWidth={69}
           getValue={(x) => x.progress}
+          align="right"
         />
         <TableColumn
           name="AlogState"
@@ -231,12 +232,14 @@ export const TableExample6 = () => {
           id="slpnl$"
           defaultWidth={58}
           getValue={(x) => x["slpnl$"]}
+          align="right"
         />
         <TableColumn
           name="δ"
           id="slpnldelta"
           defaultWidth={56}
           getValue={(x) => x.slpnldelta}
+          align="right"
         />
       </ColumnGroup>
       <ColumnGroup name="PnL Benchmark" id="pnlBenchmark">
@@ -245,24 +248,28 @@ export const TableExample6 = () => {
           id="mid$"
           defaultWidth={66}
           getValue={(x) => x["mid$"]}
+          align="right"
         />
         <TableColumn
           name="Mid δ"
           id="middelta"
           defaultWidth={58}
           getValue={(x) => x.middelta}
+          align="right"
         />
         <TableColumn
           name="Book $"
           id="book$"
           defaultWidth={66}
           getValue={(x) => x["book$"]}
+          align="right"
         />
         <TableColumn
           name="Book δ"
           id="bookdelta"
           defaultWidth={58}
           getValue={(x) => x.bookdelta}
+          align="right"
         />
       </ColumnGroup>
     </Table>

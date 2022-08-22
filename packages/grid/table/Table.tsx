@@ -604,6 +604,10 @@ export const Table = (props: TableProps) => {
     [totalHeight, totalWidth]
   );
 
+  // console.log(
+  //   cols.map((c) => `"${c.info.props.name}": ${c.info.width}`).join("\n")
+  // );
+
   return (
     <TableContext.Provider value={contextValue}>
       <LayoutContext.Provider value={layoutContext}>

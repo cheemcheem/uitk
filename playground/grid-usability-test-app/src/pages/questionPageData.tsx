@@ -19,6 +19,15 @@ import {
   questionText7,
   questionText8,
   questionText9,
+  TableExample1,
+  TableExample2,
+  TableExample3,
+  TableExample4,
+  TableExample5,
+  TableExample6,
+  TableExample7,
+  TableExample8,
+  TableExample9,
 } from "../questions";
 
 export const q1: QuestionPageProps = {
@@ -167,6 +176,7 @@ export const q1: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample1,
 };
 
 export const q2: QuestionPageProps = {
@@ -287,6 +297,7 @@ export const q2: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample2,
 };
 
 export const q3: QuestionPageProps = {
@@ -393,6 +404,7 @@ export const q3: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample3,
 };
 
 export const q4: QuestionPageProps = {
@@ -528,6 +540,7 @@ export const q4: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample4,
 };
 
 export const q5: QuestionPageProps = {
@@ -762,6 +775,7 @@ export const q5: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample5,
 };
 
 export const q6: QuestionPageProps = {
@@ -871,6 +885,7 @@ export const q6: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample6,
 };
 
 export const q7: QuestionPageProps = {
@@ -994,6 +1009,7 @@ export const q7: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample7,
 };
 
 export const q8: QuestionPageProps = {
@@ -1163,6 +1179,7 @@ export const q8: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample8,
 };
 
 export const q9: QuestionPageProps = {
@@ -1265,4 +1282,5 @@ export const q9: QuestionPageProps = {
       },
     ],
   },
+  table: TableExample9,
 };

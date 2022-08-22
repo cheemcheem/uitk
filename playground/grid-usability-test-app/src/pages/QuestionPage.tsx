@@ -4,7 +4,7 @@ import { PageHeader } from "../components/PageHeader";
 import { PageContent } from "../components/PageContent";
 import { Page } from "../components/Page";
 import { useNavigate } from "react-router-dom";
-import { FC, useLayoutEffect, useState } from "react";
+import { ComponentType, FC, useLayoutEffect, useState } from "react";
 import { Link } from "@jpmorganchase/uitk-lab";
 import { DataGrid, DataGridProps } from "@jpmorganchase/uitk-grid";
 import "./QuestionPage.css";
@@ -13,6 +13,7 @@ export interface QuestionPageProps {
   questionNumber: number;
   text: string[];
   gridProps: DataGridProps;
+  table: ComponentType;
 }
 
 const dummyText: string[] = [
@@ -20,7 +21,12 @@ const dummyText: string[] = [
 ];
 
 export const QuestionPage: FC<QuestionPageProps> = (props) => {
-  const { questionNumber = 1, text = dummyText, gridProps } = props;
+  const {
+    questionNumber = 1,
+    text = dummyText,
+    gridProps,
+    table: TableExample,
+  } = props;
   const navigate = useNavigate();
   const [started, setStarted] = useState<boolean>(false);
 
@@ -29,7 +35,7 @@ export const QuestionPage: FC<QuestionPageProps> = (props) => {
   };
 
   const onNextQuestion = () => {
-    if (questionNumber < 8) {
+    if (questionNumber < 9) {
       navigate({ pathname: `/question${questionNumber + 1}` });
     }
   };
@@ -55,7 +61,8 @@ export const QuestionPage: FC<QuestionPageProps> = (props) => {
       ) : (
         <>
           <div className={"gridContainer"}>
-            <DataGrid {...gridProps} className={"dataGrid"} />
+            <TableExample />
+            {/*<DataGrid {...gridProps} className={"dataGrid"} />*/}
           </div>
           <FlexLayout direction={"row"} justify={"space-between"}>
             <FlexItem>

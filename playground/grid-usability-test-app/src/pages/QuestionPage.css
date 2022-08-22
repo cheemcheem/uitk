@@ -6,3 +6,8 @@
 .gridContainer {
   margin-bottom: 73px;
 }
+
+.exampleTable {
+  height: 290px;
+  width: 100%;
+}

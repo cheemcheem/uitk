@@ -3,6 +3,7 @@ export const questionText4 = [
 ];
 
 export interface ExampleRow4 {
+	id: string,
 	account: string,
 	userId: string,
 	tradeId: string,
@@ -24,6 +25,7 @@ export interface ExampleRow4 {
 
 export const exampleRows4 = [
 	{
+		id: "1",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2EC",
@@ -43,6 +45,7 @@ export const exampleRows4 = [
 		spotRate: "1.20665",
 	},
 	{
+		id: "2",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2EB",
@@ -62,6 +65,7 @@ export const exampleRows4 = [
 		spotRate: "0.94546",
 	},
 	{
+		id: "3",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2EA",
@@ -81,6 +85,7 @@ export const exampleRows4 = [
 		spotRate: "0.70311",
 	},
 	{
+		id: "4",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2E9",
@@ -100,6 +105,7 @@ export const exampleRows4 = [
 		spotRate: "133.621",
 	},
 	{
+		id: "5",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2E7",
@@ -119,6 +125,7 @@ export const exampleRows4 = [
 		spotRate: "1.01954",
 	},
 	{
+		id: "6",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2E8",
@@ -138,6 +145,7 @@ export const exampleRows4 = [
 		spotRate: "1.29007",
 	},
 	{
+		id: "7",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2E5",
@@ -157,6 +165,7 @@ export const exampleRows4 = [
 		spotRate: "0.94544",
 	},
 	{
+		id: "8",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7Y2E6",
@@ -176,6 +185,7 @@ export const exampleRows4 = [
 		spotRate: "0.84526",
 	},
 	{
+		id: "9",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7X32X",
@@ -195,6 +205,7 @@ export const exampleRows4 = [
 		spotRate: "1.01978",
 	},
 	{
+		id: "10",
 		account: "ABCD - LDN",
 		userId: "O678541",
 		tradeId: "1H4-X7X32X",

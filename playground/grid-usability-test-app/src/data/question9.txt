@@ -1,6 +1,7 @@
 Finally without scrolling can you tell me which columns are pinned?						PINNED
 Now scroll, was that what you expected?
 
+
 Order ID	Side	 Qty	Symbol	Name	Client Name	Status	Exec. Qty	Remaining	Cancelled	Price	Exec. AvgPx	Comments	Trader ID	Modified
 DFGH-5655294	Buy	110,308	MSFT	Microsoft Corp	Blackrock	Live	30000	80,308		291.91	291.9		roski	11:02:59
 DFGH-5498053	Buy	26,729	AAPL	Apple Inc	AQR Capital Management	Live	0	26,729		172.1		TWAP please	lpaul	10:41:50

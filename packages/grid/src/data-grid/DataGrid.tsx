@@ -79,7 +79,7 @@ export interface DataGridProps<TRowData = any, TColumnData = any> {
   rowKeyGetter: RowKeyGetterFn<TRowData>;
   data: TRowData[];
   columnDefinitions: ColDef<TRowData, TColumnData>[];
-  columnGroupDefinitions: ColGroupDef<TRowData, TColumnData>[] | undefined;
+  columnGroupDefinitions?: ColGroupDef<TRowData, TColumnData>[] | undefined;
   // TODO make this a component?
   leafNodeGroupNameField?: keyof TRowData; // Which field to show in the group/tree column for leaf nodes
   showTreeLines?: boolean;
@@ -146,9 +146,9 @@ export const DataGrid = function <TRowData = any>(
     [dataGridModel.gridModel]
   );
 
-  dataGridModel.setRowData(data);
-  dataGridModel.setColumnDefs(columnDefinitions);
   dataGridModel.setColumnGroupDefs(columnGroupDefinitions);
+  dataGridModel.setColumnDefs(columnDefinitions);
+  dataGridModel.setRowData(data);
   dataGridModel.setRowGrouping(rowGrouping);
   dataGridModel.setShowTreeLines(showTreeLines || false);
   dataGridModel.setLeafNodeGroupNameField(leafNodeGroupNameField);

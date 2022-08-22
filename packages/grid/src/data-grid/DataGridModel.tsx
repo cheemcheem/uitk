@@ -382,6 +382,10 @@ export class DataGridModel<TRowData = any, TColumnData = any> {
 
   public constructor(options: DataGridModelOptions<TRowData>) {
     this.rowKeyGetter = options.rowKeyGetter;
+    const getRowKey: RowKeyGetter<RowNode<TRowData>> = (row, index) => {
+      return row ? row.key : `row_${index}`;
+    };
+    this.gridModel = new GridModel<RowNode<TRowData>>(getRowKey);
     this.data$ = new BehaviorSubject<TRowData[]>(options.data || []);
     this.setRowData = createHandler(this.data$);
     this.columnDefinitions$ = new BehaviorSubject<ColDef<TRowData>[]>(
@@ -436,12 +440,6 @@ export class DataGridModel<TRowData = any, TColumnData = any> {
       undefined
     );
     this.setRowSelectionMode = createHandler(this.rowSelectionMode$);
-
-    const getRowKey: RowKeyGetter<RowNode<TRowData>> = (row, index) => {
-      return row ? row.key : `row_${index}`;
-    };
-
-    this.gridModel = new GridModel<RowNode<TRowData>>(getRowKey);
 
     this.showCheckboxes$.subscribe((showCheckboxes) => {
       this.gridModel.setShowCheckboxes(showCheckboxes);

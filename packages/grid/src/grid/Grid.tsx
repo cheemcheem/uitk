@@ -41,8 +41,8 @@ export function Grid<T>(props: GridProps<T>) {
   const { rowSelectionMode = "single", cellSelectionMode = "none" } = props;
 
   useEffect(() => {
-    model.setColumnDefinitions(props.columnDefinitions);
     model.setColumnGroupDefinitions(props.columnGroupDefinitions);
+    model.setColumnDefinitions(props.columnDefinitions);
     model.setShowFooter(props.showFooter);
     model.setShowTree(props.showTree);
     model.setShowCheckboxes(props.showCheckboxes);

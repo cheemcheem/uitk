@@ -120,6 +120,7 @@ export function TableBody<T>(props: TableBodyProps<T>) {
   return (
     <tbody {...tbodyProps} onMouseDown={onMouseDown}>
       {rows.map((row) => {
+        // console.log(`row.key=${row.key}`);
         return (
           <TableRow
             key={row.key}

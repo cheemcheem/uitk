@@ -4,6 +4,7 @@ export const questionText3 = [
 ];
 
 export interface ExampleRow3 {
+	id: string,
 	tradeId: string,
 	source: string,
 	origination: string,
@@ -21,6 +22,7 @@ export interface ExampleRow3 {
 
 export const exampleRows3 = [
 	{
+		id: "1",
 		tradeId: "XSDB-101033",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -36,6 +38,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "2",
 		tradeId: "QPGJ-9641",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -51,6 +54,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "3",
 		tradeId: "QZWR-7379",
 		source: "TRADING",
 		origination: "SalesOMS",
@@ -66,6 +70,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "4",
 		tradeId: "NTOZ-6722",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -81,6 +86,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "5",
 		tradeId: "VQHK-91051",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -96,6 +102,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "6",
 		tradeId: "JYRK-34110",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -111,6 +118,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "7",
 		tradeId: "MFLP-9987",
 		source: "TRADING",
 		origination: "SalesOMS",
@@ -126,6 +134,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "8",
 		tradeId: "SQBS-7475",
 		source: "TRADING",
 		origination: "SalesOMS",
@@ -141,6 +150,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "9",
 		tradeId: "WQYU-3631",
 		source: "SALES",
 		origination: "SalesOMS",
@@ -156,6 +166,7 @@ export const exampleRows3 = [
 		levelType: "Price",
 	},
 	{
+		id: "10",
 		tradeId: "IXAO-78710",
 		source: "SALES",
 		origination: "SalesOMS",

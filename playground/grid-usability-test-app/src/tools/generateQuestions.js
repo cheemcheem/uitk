@@ -59,7 +59,9 @@ function processFile(fileName) {
     }
     return propName;
   });
+
   output.push(`export interface ExampleRow${questIndex} {`);
+  output.push(`\tid: string,`);
   propNames.forEach((p) => {
     output.push(`\t${p}: string,`);
   });
@@ -67,6 +69,7 @@ function processFile(fileName) {
   output.push("");
 
   output.push(`export const exampleRows${questIndex} = [`);
+  let rowId = 1;
   while (lineIndex < lines.length) {
     const rowText = lines[lineIndex].trim();
     if (rowText.length === 0) {
@@ -76,6 +79,8 @@ function processFile(fileName) {
     output.push(`\t{`);
     let row = rowText.trim().split("\t");
     row = row.map((v) => `"${v.trim()}"`);
+    output.push(`\t\tid: "${rowId}",`);
+    rowId++;
     for (let i = 0; i < row.length; i++) {
       output.push(`\t\t${propNames[i]}: ${row[i]},`);
     }

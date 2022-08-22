@@ -33,6 +33,9 @@ export function createHeaderVisibleColumnRange<T>(
         const lastGroupColumns = lastVisibleGroup.columns.getValue();
         const firstVisibleColumn = firstGroupColumns[0];
         const lastVisibleColumn = lastGroupColumns[lastGroupColumns.length - 1];
+        if (!firstVisibleColumn || !firstMiddleColumn || !lastVisibleColumn) {
+          return Rng.empty;
+        }
         return new Rng(
           firstVisibleColumn.index - firstMiddleColumn.index,
           lastVisibleColumn.index - firstMiddleColumn.index + 1

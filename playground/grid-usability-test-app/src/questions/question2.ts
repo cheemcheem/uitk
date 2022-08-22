@@ -3,6 +3,7 @@ export const questionText2 = [
 ];
 
 export interface ExampleRow2 {
+	id: string,
 	timestamp: string,
 	jpmDirection: string,
 	notional: string,
@@ -22,6 +23,7 @@ export interface ExampleRow2 {
 
 export const exampleRows2 = [
 	{
+		id: "1",
 		timestamp: "10:40",
 		jpmDirection: "BUY",
 		notional: "14,100,000",
@@ -39,6 +41,7 @@ export const exampleRows2 = [
 		clientContact: "Beulah Bates",
 	},
 	{
+		id: "2",
 		timestamp: "10:39",
 		jpmDirection: "BUY",
 		notional: "41,200,000",
@@ -56,6 +59,7 @@ export const exampleRows2 = [
 		clientContact: "Jax May",
 	},
 	{
+		id: "3",
 		timestamp: "10:38",
 		jpmDirection: "SELL",
 		notional: "13,600,000",
@@ -73,6 +77,7 @@ export const exampleRows2 = [
 		clientContact: "Nolan Bradford",
 	},
 	{
+		id: "4",
 		timestamp: "10:37",
 		jpmDirection: "BUY",
 		notional: "35,600,000",
@@ -90,6 +95,7 @@ export const exampleRows2 = [
 		clientContact: "Nolan Bradford",
 	},
 	{
+		id: "5",
 		timestamp: "10:36",
 		jpmDirection: "SELL",
 		notional: "41,200,000",
@@ -107,6 +113,7 @@ export const exampleRows2 = [
 		clientContact: "Shaunie Kennedy",
 	},
 	{
+		id: "6",
 		timestamp: "10:35",
 		jpmDirection: "BUY",
 		notional: "700,000",
@@ -124,6 +131,7 @@ export const exampleRows2 = [
 		clientContact: "Conah Alfaro",
 	},
 	{
+		id: "7",
 		timestamp: "10:34",
 		jpmDirection: "SELL",
 		notional: "18,200,000",
@@ -141,6 +149,7 @@ export const exampleRows2 = [
 		clientContact: "Gabriella Marks",
 	},
 	{
+		id: "8",
 		timestamp: "10:33",
 		jpmDirection: "SELL",
 		notional: "3,700,000",
@@ -158,6 +167,7 @@ export const exampleRows2 = [
 		clientContact: "Millie-Mae Mercer",
 	},
 	{
+		id: "9",
 		timestamp: "10:32",
 		jpmDirection: "SELL",
 		notional: "8,300,000",
@@ -175,6 +185,7 @@ export const exampleRows2 = [
 		clientContact: "Gabriella Marks",
 	},
 	{
+		id: "10",
 		timestamp: "10:31",
 		jpmDirection: "SELL",
 		notional: "900,000",

@@ -3,6 +3,7 @@ export const questionText1 = [
 ];
 
 export interface ExampleRow1 {
+	id: string,
 	rfeId: string,
 	bookingStatus: string,
 	orderId: string,
@@ -26,6 +27,7 @@ export interface ExampleRow1 {
 
 export const exampleRows1 = [
 	{
+		id: "1",
 		rfeId: "179918311",
 		bookingStatus: "",
 		orderId: "DFGH-5655294",
@@ -47,6 +49,7 @@ export const exampleRows1 = [
 		pos: "Open",
 	},
 	{
+		id: "2",
 		rfeId: "188824436",
 		bookingStatus: "",
 		orderId: "DFGH-5498053",
@@ -68,6 +71,7 @@ export const exampleRows1 = [
 		pos: "Open",
 	},
 	{
+		id: "3",
 		rfeId: "371437824",
 		bookingStatus: "",
 		orderId: "DFGH-6342062",
@@ -89,6 +93,7 @@ export const exampleRows1 = [
 		pos: "Open",
 	},
 	{
+		id: "4",
 		rfeId: "800121810",
 		bookingStatus: "",
 		orderId: "DFGH-4460948",
@@ -110,6 +115,7 @@ export const exampleRows1 = [
 		pos: "Open",
 	},
 	{
+		id: "5",
 		rfeId: "809602188",
 		bookingStatus: "",
 		orderId: "DFGH-2880092",
@@ -129,6 +135,7 @@ export const exampleRows1 = [
 		orderStatus: "Rejected",
 	},
 	{
+		id: "6",
 		rfeId: "715017685",
 		bookingStatus: "",
 		orderId: "DFGH-7010380",
@@ -150,6 +157,7 @@ export const exampleRows1 = [
 		pos: "Open",
 	},
 	{
+		id: "7",
 		rfeId: "274301779",
 		bookingStatus: "Booked",
 		orderId: "DFGH-5374603",
@@ -169,6 +177,7 @@ export const exampleRows1 = [
 		orderStatus: "Cancelled",
 	},
 	{
+		id: "8",
 		rfeId: "569684843",
 		bookingStatus: "Booked",
 		orderId: "DFGH-9063894",
@@ -190,6 +199,7 @@ export const exampleRows1 = [
 		pos: "Close",
 	},
 	{
+		id: "9",
 		rfeId: "396830427",
 		bookingStatus: "Booked",
 		orderId: "DFGH-9234001",
@@ -211,6 +221,7 @@ export const exampleRows1 = [
 		pos: "Close",
 	},
 	{
+		id: "10",
 		rfeId: "269760267",
 		bookingStatus: "Booked",
 		orderId: "DFGH-7591328",

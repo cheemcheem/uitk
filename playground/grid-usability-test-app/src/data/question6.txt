@@ -1,6 +1,6 @@
 In this blotter I would like you to tell me what the column title the “Unset” values apply to.								ANSWER
 
-Strategy Type	Cmd Status	Symbol	User	Progress	AlogState	$	δ	$	δ	$	δ
+Strategy Type	Cmd Status	Symbol	User	Progress	AlogState	slPnl$	slPnlDelta	mid$	midDelta	book$	bookDelta
 SingleLeg	Unset	AMD	awills	52%	Running	-1,891		2390	4.73	-624	-12
 SingleLeg	Unset	AMD	awills	58%	Running	155		-3,741	-27	-3,250	-23
 SingleLeg	Unset	AMD	awills	100%	Complete	-1.265		-1,349	-8.4	-1,988	-12

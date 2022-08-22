@@ -4,6 +4,7 @@ export const questionText9 = [
 ];
 
 export interface ExampleRow9 {
+	id: string,
 	orderId: string,
 	side: string,
 	qty: string,
@@ -23,6 +24,7 @@ export interface ExampleRow9 {
 
 export const exampleRows9 = [
 	{
+		id: "1",
 		orderId: "DFGH-5655294",
 		side: "Buy",
 		qty: "110,308",
@@ -40,6 +42,7 @@ export const exampleRows9 = [
 		modified: "11:02:59",
 	},
 	{
+		id: "2",
 		orderId: "DFGH-5498053",
 		side: "Buy",
 		qty: "26,729",
@@ -57,6 +60,7 @@ export const exampleRows9 = [
 		modified: "10:41:50",
 	},
 	{
+		id: "3",
 		orderId: "DFGH-6342062",
 		side: "Buy",
 		qty: "24,553",
@@ -74,6 +78,7 @@ export const exampleRows9 = [
 		modified: "10:39:33",
 	},
 	{
+		id: "4",
 		orderId: "DFGH-4460948",
 		side: "Sell",
 		qty: "107,623",
@@ -91,6 +96,7 @@ export const exampleRows9 = [
 		modified: "10:49:33",
 	},
 	{
+		id: "5",
 		orderId: "DFGH-2880092",
 		side: "Buy",
 		qty: "77,325",
@@ -108,6 +114,7 @@ export const exampleRows9 = [
 		modified: "10:34:08",
 	},
 	{
+		id: "6",
 		orderId: "DFGH-7010380",
 		side: "Sell",
 		qty: "420,863",
@@ -125,6 +132,7 @@ export const exampleRows9 = [
 		modified: "11:08:36",
 	},
 	{
+		id: "7",
 		orderId: "DFGH-5374603",
 		side: "Sell",
 		qty: "251,750",
@@ -142,6 +150,7 @@ export const exampleRows9 = [
 		modified: "11:06:44",
 	},
 	{
+		id: "8",
 		orderId: "DFGH-9063894",
 		side: "Buy",
 		qty: "33,795",
@@ -159,6 +168,7 @@ export const exampleRows9 = [
 		modified: "10:24:47",
 	},
 	{
+		id: "9",
 		orderId: "DFGH-9234001",
 		side: "Sell",
 		qty: "567,103",
@@ -176,6 +186,7 @@ export const exampleRows9 = [
 		modified: "10:24:34",
 	},
 	{
+		id: "10",
 		orderId: "DFGH-7591328",
 		side: "Buy",
 		qty: "189,330",

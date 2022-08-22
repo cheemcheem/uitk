@@ -9,7 +9,7 @@ export const TestInstructionsPage = () => {
   const navigate = useNavigate();
 
   const onBegin = () => {
-    navigate({ pathname: "/question" });
+    navigate({ pathname: "/question1" });
   };
 
   return (

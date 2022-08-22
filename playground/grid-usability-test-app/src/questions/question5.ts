@@ -4,6 +4,7 @@ export const questionText5 = [
 ];
 
 export interface ExampleRow5 {
+	id: string,
 	traderName: string,
 	securityType: string,
 	description: string,
@@ -41,6 +42,7 @@ export interface ExampleRow5 {
 
 export const exampleRows5 = [
 	{
+		id: "1",
 		traderName: "Thomas Spence",
 		securityType: "BOND",
 		description: "ROLLS 5.75 15Oct27 144A",
@@ -75,6 +77,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "2",
 		traderName: "Robert Grass",
 		securityType: "BOND",
 		description: "HD 3.35 09/15/25",
@@ -109,6 +112,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "3",
 		traderName: "Robert Grass",
 		securityType: "BOND",
 		description: "MSFT 4.25 02/06/47",
@@ -144,6 +148,7 @@ export const exampleRows5 = [
 		benchmarkSecurity: "912810TD0",
 	},
 	{
+		id: "4",
 		traderName: "Robert Grass",
 		securityType: "BOND",
 		description: "QCOM 4.3 05/20/47",
@@ -179,6 +184,7 @@ export const exampleRows5 = [
 		benchmarkSecurity: "912810TD0",
 	},
 	{
+		id: "5",
 		traderName: "Robert Grass",
 		securityType: "BOND",
 		description: "AAPL 4.65 02/23/46",
@@ -213,6 +219,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "6",
 		traderName: "Huang Lu",
 		securityType: "BOND",
 		description: "OXY 5.875 09/01/25",
@@ -247,6 +254,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "7",
 		traderName: "Millie Davis",
 		securityType: "BOND",
 		description: "T 2.0 04/30/24",
@@ -281,6 +289,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "8",
 		traderName: "Huang Lu",
 		securityType: "BOND",
 		description: "BNP 4.375 12May26 144A",
@@ -315,6 +324,7 @@ export const exampleRows5 = [
 		salesTeam: "NEW YORK",
 	},
 	{
+		id: "9",
 		traderName: "Robert Grass",
 		securityType: "BOND",
 		description: "AMZN 5.2 12/03/25",
@@ -350,6 +360,7 @@ export const exampleRows5 = [
 		benchmarkSecurity: "US91282CEY30",
 	},
 	{
+		id: "10",
 		traderName: "Millie Davis",
 		securityType: "BOND",
 		description: "HLT 4.875 01/15/30",

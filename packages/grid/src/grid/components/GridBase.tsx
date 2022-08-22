@@ -54,7 +54,7 @@ export function GridBase<T>(props: GridBaseProps<T>) {
       const rect = rootRef.current.getBoundingClientRect();
       model.resize({ width: rect.width, height: rect.height });
     }
-  }, [rootRef.current]);
+  }); // [rootRef.current]
 
   const onWheel: WheelEventHandler<HTMLTableElement> = useCallback((event) => {
     const scrollerDiv = scrollableRef.current;

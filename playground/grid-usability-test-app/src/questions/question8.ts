@@ -4,6 +4,7 @@ export const questionText8 = [
 ];
 
 export interface ExampleRow8 {
+	id: string,
 	source: string,
 	origination: string,
 	clientAccountName: string,
@@ -30,6 +31,7 @@ export interface ExampleRow8 {
 
 export const exampleRows8 = [
 	{
+		id: "1",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "SNAPSHOT INVESTORS",
@@ -54,6 +56,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "11.97574975",
 	},
 	{
+		id: "2",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "-",
@@ -78,6 +81,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "643.5",
 	},
 	{
+		id: "3",
 		source: "TRADING",
 		origination: "SalesOMS",
 		clientAccountName: "JASMINE TRUST (TOP, US)",
@@ -102,6 +106,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "23.11443627",
 	},
 	{
+		id: "4",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "THE FINER THINGS (TOP, US)",
@@ -126,6 +131,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "10",
 	},
 	{
+		id: "5",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "LORDSHIP LANE HLDGS (TOP)",
@@ -150,6 +156,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "0",
 	},
 	{
+		id: "6",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "LORDSHIP LANE HLDGS (TOP)",
@@ -174,6 +181,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "320.83",
 	},
 	{
+		id: "7",
 		source: "TRADING",
 		origination: "SalesOMS",
 		clientAccountName: "WALNUT & SONS",
@@ -198,6 +206,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "306.1272646",
 	},
 	{
+		id: "8",
 		source: "TRADING",
 		origination: "SalesOMS",
 		clientAccountName: "SALAZAAR",
@@ -222,6 +231,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "7",
 	},
 	{
+		id: "9",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "MAGNUM PETERSON LTD",
@@ -246,6 +256,7 @@ export const exampleRows8 = [
 		"riskFinalTotalCv$": "6.24745731",
 	},
 	{
+		id: "10",
 		source: "SALES",
 		origination: "SalesOMS",
 		clientAccountName: "LORDSHIP LANE HLDGS (TOP)",

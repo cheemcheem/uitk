@@ -6,6 +6,7 @@ export const questionText7 = [
 ];
 
 export interface ExampleRow7 {
+	id: string,
 	tradeId: string,
 	tradeDate: string,
 	bookingStatus: string,
@@ -28,6 +29,7 @@ export interface ExampleRow7 {
 
 export const exampleRows7 = [
 	{
+		id: "1",
 		tradeId: "SMFC-1789",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -48,6 +50,7 @@ export const exampleRows7 = [
 		traderName: "Izabelle Mcphee",
 	},
 	{
+		id: "2",
 		tradeId: "IABF-3716",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -68,6 +71,7 @@ export const exampleRows7 = [
 		traderName: "Ruairidh Lancaster",
 	},
 	{
+		id: "3",
 		tradeId: "EOJR-610510",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -88,6 +92,7 @@ export const exampleRows7 = [
 		traderName: "Zoha Chung",
 	},
 	{
+		id: "4",
 		tradeId: "ZPQC-1588",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -108,6 +113,7 @@ export const exampleRows7 = [
 		traderName: "Zoha Chung",
 	},
 	{
+		id: "5",
 		tradeId: "FDVJ-8324",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -128,6 +134,7 @@ export const exampleRows7 = [
 		traderName: "Ayra Campos",
 	},
 	{
+		id: "6",
 		tradeId: "OMCY-102510",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "BROKEN",
@@ -148,6 +155,7 @@ export const exampleRows7 = [
 		traderName: "Dianne Lennon",
 	},
 	{
+		id: "7",
 		tradeId: "UTUW-3448",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -168,6 +176,7 @@ export const exampleRows7 = [
 		traderName: "Ruairidh Lancaster",
 	},
 	{
+		id: "8",
 		tradeId: "YNDM-1667",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -188,6 +197,7 @@ export const exampleRows7 = [
 		traderName: "Ayra Campos",
 	},
 	{
+		id: "9",
 		tradeId: "YMTM-4252",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",
@@ -208,6 +218,7 @@ export const exampleRows7 = [
 		traderName: "Zoha Chung",
 	},
 	{
+		id: "10",
 		tradeId: "KESS-3728",
 		tradeDate: "19 Aug 22",
 		bookingStatus: "LIVE STATUS",

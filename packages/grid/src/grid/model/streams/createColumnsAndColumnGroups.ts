@@ -167,6 +167,7 @@ export function addAutoColumnsAndGroups<T>(
               title: "",
               columnKeys: [checkboxColumnDefinition.key],
             });
+            checkboxColumnGroup.columns.next([checkboxColumn]);
             leftColumnGroups = [checkboxColumnGroup, ...leftColumnGroups];
           }
           leftColumns = [checkboxColumn, ...leftColumns];
@@ -191,6 +192,7 @@ export function addAutoColumnsAndGroups<T>(
               // columns: [emptyColumnDefinition],
               columnKeys: [emptyColumnDefinition.key],
             });
+            emptyColumnGroup.columns.next([emptyColumn]);
             middleColumnGroups = [...middleColumnGroups, emptyColumnGroup];
           }
           middleColumns = [...middleColumns, emptyColumn];

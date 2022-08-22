@@ -237,6 +237,7 @@ export const TableExample4 = () => {
       rowData={exampleRows4}
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
+      defaultSelectedRowKeys={new Set(["2", "8", "9"])}
     >
       <RowSelectionColumn id={"rowSelection"} />
       <TableColumn

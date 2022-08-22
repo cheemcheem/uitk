@@ -1,16 +1,35 @@
-.gtaPageHeader {
+.gtaPageHeader-1 {
 }
 
-.gtaPageHeader-text {
+.gtaPageHeader-2 {
+}
+
+.gtaPageHeader-1-text {
   height: 61px;
   font-weight: 800;
   font-size: 56px;
   line-height: 61px;
 }
 
-.gtaPageHeader-separator {
+.gtaPageHeader-1-separator {
   margin-top: 36px;
   height: 4px;
   width: 48px;
   background-color: var(--uitk-color-orange-400);
+}
+
+.gtaPageHeader-2-text {
+  margin-top: 36px;
+  height: 49px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.gtaPageHeader-2-separator {
+  margin-top: 24px;
+  margin-bottom: 36px;
+  height: 4px;
+  width: 100%;
+  background-color: var(--uitk-color-grey-60);
 }

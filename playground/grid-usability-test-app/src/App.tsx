@@ -7,6 +7,7 @@ import "@jpmorganchase/uitk-theme/index.css";
 import { TestInstructionsPage } from "./pages/TestInstructionsPage";
 import { QuestionPage } from "./pages/QuestionPage";
 import { q1, q2, q3, q4, q5, q6, q7, q8, q9 } from "./pages/questionPageData";
+import { TestCompletePage } from "./pages/TestCompletePage";
 
 function App(): JSX.Element {
   return (
@@ -27,6 +28,7 @@ function App(): JSX.Element {
           <Route path={"/question7"} element={<QuestionPage {...q7} />} />
           <Route path={"/question8"} element={<QuestionPage {...q8} />} />
           <Route path={"/question9"} element={<QuestionPage {...q9} />} />
+          <Route path={"/test-complete"} element={<TestCompletePage />} />
         </Routes>
       </ToolkitProvider>
     </BrowserRouter>

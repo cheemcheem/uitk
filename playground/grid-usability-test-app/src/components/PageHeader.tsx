@@ -11,9 +11,18 @@ const withBaseName = makePrefixer("gtaPageHeader");
 
 export const PageHeader: FC<PageHeaderProps> = ({ children }) => {
   return (
-    <div className={withBaseName()}>
-      <div className={withBaseName("text")}>{children}</div>
-      <div className={withBaseName("separator")}></div>
+    <div className={withBaseName("1")}>
+      <div className={withBaseName("1-text")}>{children}</div>
+      <div className={withBaseName("1-separator")}></div>
+    </div>
+  );
+};
+
+export const PageHeader2: FC<PageHeaderProps> = ({ children }) => {
+  return (
+    <div className={withBaseName("2")}>
+      <div className={withBaseName("2-text")}>{children}</div>
+      <div className={withBaseName("2-separator")}></div>
     </div>
   );
 };

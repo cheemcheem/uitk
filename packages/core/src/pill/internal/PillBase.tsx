@@ -14,7 +14,7 @@ import {
   useState,
 } from "react";
 import { DivButton } from "../../button";
-import { useTooltip, useTooltipContext } from "../../tooltip";
+import { TooltipProps, useTooltip, useTooltipContext } from "../../tooltip";
 import {
   makePrefixer,
   useForkRef,

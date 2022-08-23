@@ -4,10 +4,32 @@
 }
 
 .gridContainer {
-  margin-bottom: 73px;
 }
 
 .exampleTable {
   height: 290px;
   width: 100%;
+}
+
+.notStarted {
+  flex-grow: 1;
+
+}
+
+.started {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.controlPanel {
+
 }

@@ -96,42 +96,48 @@ export const QuestionPage: FC<QuestionPageProps> = (props) => {
 
   return (
     <Page>
-      <PageHeader>{`Question ${questionNumber}`}</PageHeader>
-      <PageContent>
-        {text.map((line, i) => (
-          <p key={i}>{line}</p>
-        ))}
-      </PageContent>
       {!started ? (
-        <Button variant={"cta"} onClick={onStart}>
-          Start
-        </Button>
+        <div className={"notStarted"}>
+          <PageHeader>{`Question ${questionNumber}`}</PageHeader>
+          <PageContent>
+            {text.map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
+          </PageContent>
+          <Button variant={"cta"} onClick={onStart}>
+            Start
+          </Button>
+        </div>
       ) : (
-        <>
-          <div className={"gridContainer"}>
-            {!isRefreshing && <TableExample />}
-            {/*<DataGrid {...gridProps} className={"dataGrid"} />*/}
+        <div className={"started"}>
+          <div className={"main"}>
+            <div className={"gridContainer"}>
+              {!isRefreshing && <TableExample />}
+              {/*<DataGrid {...gridProps} className={"dataGrid"} />*/}
+            </div>
           </div>
-          <FlexLayout direction={"row"} justify={"space-between"}>
-            <FlexItem>
-              <Button variant={"cta"} onClick={onNextQuestion}>
-                Next Question
-              </Button>
-            </FlexItem>
-            <FlexItem>
-              <Button variant={"primary"} onClick={onRefresh}>
-                Refresh Grid
-              </Button>
-            </FlexItem>
-          </FlexLayout>
-          <FlexLayout direction={"row"} style={{ marginTop: "30px" }}>
-            <FlexItem grow={1} />
-            <FlexItem style={{ textAlign: "right" }}>
-              <div>{timer}</div>
-              <Link onClick={onNextQuestion}>Skip task</Link>
-            </FlexItem>
-          </FlexLayout>
-        </>
+          <div className={"controlPanel"}>
+            <FlexLayout direction={"row"} justify={"space-between"}>
+              <FlexItem>
+                <Button variant={"cta"} onClick={onNextQuestion}>
+                  Next Question
+                </Button>
+              </FlexItem>
+              <FlexItem>
+                <Button variant={"primary"} onClick={onRefresh}>
+                  Reset Task
+                </Button>
+              </FlexItem>
+            </FlexLayout>
+            <FlexLayout direction={"row"} style={{ marginTop: "30px" }}>
+              <FlexItem grow={1} />
+              <FlexItem style={{ textAlign: "right" }}>
+                <div>{timer}</div>
+                <Link onClick={onNextQuestion}>Skip task</Link>
+              </FlexItem>
+            </FlexLayout>
+          </div>
+        </div>
       )}
     </Page>
   );

@@ -13,7 +13,7 @@ export const TableExample9 = () => {
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
     >
-      <ColumnGroup name="" id="selector">
+      <ColumnGroup name="" id="selector" pinned={"left"}>
         <RowSelectionColumn id={"rowSelection"} />
       </ColumnGroup>
       <ColumnGroup name="Order Summary" id="orderSummary">

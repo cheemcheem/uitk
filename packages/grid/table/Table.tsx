@@ -63,6 +63,7 @@ export interface TableProps {
   rowKeyGetter: (row: any) => string;
   defaultSelectedRowKeys?: Set<string>;
   className?: string;
+  variant?: "primary" | "secondary";
 }
 
 export interface TableRowModel {
@@ -96,6 +97,7 @@ export const Table = (props: TableProps) => {
     rowKeyGetter,
     children,
     defaultSelectedRowKeys,
+    variant = "primary",
   } = props;
 
   // if (rowData.length > 0) {
@@ -475,6 +477,9 @@ export const Table = (props: TableProps) => {
                 {
                   [withBaseName("zebra")]: zebra,
                   [withBaseName("columnSeparators")]: columnSeparators,
+                  [withBaseName("primaryBackground")]: variant === "primary",
+                  [withBaseName("secondaryBackground")]:
+                    variant === "secondary",
                 },
                 className
               )}

@@ -1,0 +1,13 @@
+.uitkComboBox {
+  width: 100%;
+}
+
+.uitkComboBox-field {
+}
+
+.uitkComboBox-disabled {
+}
+
+.uitkComboBox-listWindowRoot {
+  z-index: calc(var(--uitk-zindex-tooltip) - 1);
+}

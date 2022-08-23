@@ -10,7 +10,7 @@ import {
 
 import { AriaAnnouncerContext } from "./AriaAnnouncerContext";
 
-export const DELAY = 150;
+export const ARIA_ANNOUNCE_DELAY = 150;
 
 export interface AriaAnnouncerProviderProps {
   /**
@@ -23,23 +23,28 @@ export const AriaAnnouncerProvider: FC<AriaAnnouncerProviderProps> = ({
   children,
   style,
 }) => {
+  // announcement that gets rendered inside aria-live and read out by screen readers
   const [currentAnnouncement, setCurrentAnnouncement] = useState("");
+  // queue that stores all the requested announcements
   const announcementsRef = useRef<string[]>([]);
+  // we use this variable to decide whether to start the announcement queue if one is not already in progress
   const isAnnouncingRef = useRef(false);
+  // we need to keep track of the state of the component mount since all the async function calls
+  // might trigger a setState after a component has been unmounted
   const mountedRef = useRef(true);
 
+  // announceAll will get called recursively until all the announcements are rendered and cleared from the queue
   const announceAll = useCallback(() => {
     isAnnouncingRef.current = true;
     if (announcementsRef.current.length && mountedRef.current) {
       setCurrentAnnouncement("");
       requestAnimationFrame(() => {
         if (mountedRef.current) {
-          const [announcement, ...restAnnouncements] = announcementsRef.current;
-          announcementsRef.current = restAnnouncements;
+          const announcement = announcementsRef.current.shift() as string;
           setCurrentAnnouncement(announcement);
           setTimeout(() => {
             announceAll();
-          }, DELAY);
+          }, ARIA_ANNOUNCE_DELAY);
         }
       });
     } else {
@@ -49,7 +54,7 @@ export const AriaAnnouncerProvider: FC<AriaAnnouncerProviderProps> = ({
 
   const announce = useCallback(
     (announcement) => {
-      announcementsRef.current = announcementsRef.current.concat(announcement);
+      announcementsRef.current.push(announcement);
       if (!isAnnouncingRef.current) {
         announceAll();
       }
@@ -65,22 +70,23 @@ export const AriaAnnouncerProvider: FC<AriaAnnouncerProviderProps> = ({
   );
 
   const value = useMemo(() => ({ announce }), [announce]);
-
   return (
     <AriaAnnouncerContext.Provider value={value}>
       {children}
       <div
         aria-atomic="true"
         aria-live="assertive"
-        // hidden styling based on https://webaim.org/techniques/css/invisiblecontent/
+        // hidden styling based on https://tailwindcss.com/docs/screen-readers
         style={{
-          clip: "rect(1px, 1px, 1px, 1px)",
-          clipPath: "inset(50%)",
+          position: "absolute",
           height: 1,
           width: 1,
-          overflow: "hidden",
           padding: 0,
-          position: "absolute",
+          margin: -1,
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          borderWidth: 0,
           ...style,
         }}
       >

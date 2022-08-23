@@ -48,6 +48,10 @@ const withBaseName = makePrefixer(pillBaseName);
 
 export interface PillBaseProps extends HTMLAttributes<HTMLDivElement> {
   /**
+   * Props passed to the tooltip
+   */
+  TooltipProps?: Partial<TooltipProps>;
+  /**
    * Defines a human-readable, author-localized description for the role of an element.
    *
    * This should be in favour of aria-label for `Pill`
@@ -96,6 +100,7 @@ export interface PillBaseProps extends HTMLAttributes<HTMLDivElement> {
 
 export const PillBase = forwardRef(function PillBase(
   {
+    TooltipProps = {},
     "aria-roledescription": ariaRoledescription = "Pill",
     label,
     className,
@@ -199,7 +204,7 @@ export const PillBase = forwardRef(function PillBase(
 
   return (
     <>
-      <Tooltip {...getTooltipProps({ title: label })} />
+      <Tooltip {...getTooltipProps({ title: label, ...TooltipProps })} />
       <Component ref={handleRef} {...triggerProps}>
         {pillIcon || null}
         <div className={withBaseName("label")} ref={labelRef}>

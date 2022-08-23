@@ -1,20 +1,13 @@
 import { makePrefixer } from "../../utils";
 
 import cx from "classnames";
-import {
-  ComponentPropsWithoutRef,
-  forwardRef,
-  HTMLAttributes,
-  ReactNode,
-} from "react";
+import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import { ParentChildItem, SlideDirection } from "../ParentChildItem";
 import { useIsViewportLargerThanBreakpoint } from "../../utils";
 
 import "./ParentChildLayout.css";
-import { FlexLayout } from "../FlexLayout";
+import { FlexLayout, FlexLayoutProps } from "../FlexLayout";
 import { Breakpoints } from "../../breakpoints";
-
-type FlexLayoutProps = ComponentPropsWithoutRef<typeof FlexLayout>;
 
 export type StackedViewElement = "parent" | "child";
 
@@ -121,7 +114,7 @@ export const ParentChildLayout = forwardRef<
     <FlexLayout
       className={cx(className, withBaseName())}
       ref={ref}
-      wrap={false}
+      disableWrap
       {...rest}
     >
       {stackedView ? (

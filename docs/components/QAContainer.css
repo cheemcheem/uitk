@@ -23,6 +23,10 @@
   width: var(--qaContainer-width);
 }
 
+.uitkQAContainer-vertical {
+  --qaContainer-mode-cols: 1;
+}
+
 .background-block {
   --bgBlock-outer-width: calc(var(--qaContainer-inner-width) / var(--qaContainer-mode-cols));
   --bgBlock-inner-width: calc(var(--bgBlock-outer-width) - (2 * var(--bgBlock-padding)));
@@ -32,6 +36,10 @@
   display: inline-block;
   padding: var(--bgBlock-padding);
   width: var(--bgBlock-outer-width);
+}
+
+.uitkQAContainer-vertical {
+  --qaContainer-mode-cols: 1;
 }
 
 .background-item-wrapper {

@@ -7,6 +7,7 @@
   --uitk-text-fontWeight-small: var(--uitk-typography-weight-light);
   --uitk-text-fontWeight-strong: var(--uitk-typography-weight-semiBold);
   --uitk-text-letterSpacing: 0;
+  --uitk-text-lineHeight: 1.3;
   --uitk-text-textAlign: left;
   --uitk-text-textAlign-embedded: center;
   --uitk-text-textDecoration: none;
@@ -57,7 +58,7 @@
   /* Colors */
   --uitk-text-background: transparent;
   --uitk-text-background-hover: transparent;
-  --uitk-text-background-selected: var(--uitk-palette-neutrallight);
+  --uitk-text-background-selected: var(--uitk-palette-neutral-highlight);
 
   --uitk-text-primary-foreground: var(--uitk-palette-neutral-primary-foreground);
   --uitk-text-primary-foreground-hover: var(--uitk-palette-neutral-primary-foreground);

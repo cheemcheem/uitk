@@ -1,8 +1,6 @@
-import { ComponentPropsWithoutRef } from "react";
-import { FlexLayout } from "./FlexLayout";
-
-export type LayoutDirection = "row" | "column";
-
+export const LAYOUT_DIRECTION = ["row", "column"] as const;
+export type LayoutDirection = typeof LAYOUT_DIRECTION[number];
 export type LayoutSeparator = "start" | "center" | "end";
-
-export type FlexLayoutProps = ComponentPropsWithoutRef<typeof FlexLayout>;
+export type LayoutAnimation = "slide" | "fade";
+export type LayoutAnimationDirection = "horizontal" | "vertical";
+export type LayoutAnimationTransition = "increase" | "decrease";

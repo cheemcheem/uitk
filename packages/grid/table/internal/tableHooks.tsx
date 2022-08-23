@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from "react";
 import {
-  Size,
   TableColumnGroupModel,
   TableColumnModel,
   TableRowModel,

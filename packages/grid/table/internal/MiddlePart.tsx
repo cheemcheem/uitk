@@ -15,7 +15,8 @@ export interface MiddlePartProps<T> {
   hoverOverRowKey?: string;
   setHoverOverRowKey: (key: string | undefined) => void;
   midGap: number;
-  isZebra?: boolean;
+  zebra?: boolean;
+  columnSeparators?: boolean;
 }
 
 export function MiddlePart<T>(props: MiddlePartProps<T>) {
@@ -27,7 +28,8 @@ export function MiddlePart<T>(props: MiddlePartProps<T>) {
     hoverOverRowKey,
     setHoverOverRowKey,
     midGap,
-    isZebra,
+    zebra,
+    columnSeparators,
   } = props;
 
   return (
@@ -41,7 +43,8 @@ export function MiddlePart<T>(props: MiddlePartProps<T>) {
             hoverRowKey={hoverOverRowKey}
             setHoverRowKey={setHoverOverRowKey}
             gap={midGap}
-            isZebra={isZebra}
+            zebra={zebra}
+            columnSeparators={columnSeparators}
           />
         </table>
       </div>

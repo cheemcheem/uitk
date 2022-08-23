@@ -18,6 +18,7 @@ export interface TableCellProps {
   style?: CSSProperties;
   isFocused?: boolean;
   children?: ReactNode;
+  columnSeparator?: boolean;
 }
 
 export interface TableCellValueProps {

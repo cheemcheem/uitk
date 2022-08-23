@@ -293,7 +293,7 @@ export const TableExample8 = () => {
       rowData={exampleRows8}
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
-      isZebra={true}
+      zebra={true}
     >
       <RowSelectionColumn id={"rowSelection"} />
       <TableColumn

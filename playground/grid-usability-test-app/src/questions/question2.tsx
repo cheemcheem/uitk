@@ -215,6 +215,8 @@ export const TableExample2 = () => {
       rowData={exampleRows2}
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
+      columnSeparators={true}
+      zebra={true}
     >
       <RowSelectionColumn id={"rowSelection"} />
       <TableColumn

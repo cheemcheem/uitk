@@ -61,16 +61,12 @@ export type ColumnGroupColumnSeparatorType = "regular" | "none";
 
 export interface TableProps {
   children: ReactNode;
-  isZebra?: boolean;
+  zebra?: boolean;
+  columnSeparators?: boolean;
   rowData: any[];
   rowKeyGetter: (row: any) => string;
   defaultSelectedRowKeys?: Set<string>;
   className?: string;
-}
-
-export interface Size {
-  height: number;
-  width: number;
 }
 
 export interface TableRowModel {
@@ -95,10 +91,15 @@ export interface TableColumnGroupModel {
   colSpan: number;
 }
 
+const useColumnRegistry = () => {
+
+}
+
 export const Table = (props: TableProps) => {
   const {
     rowData,
-    isZebra,
+    zebra,
+    columnSeparators,
     className,
     rowKeyGetter,
     children,
@@ -628,7 +629,7 @@ export const Table = (props: TableProps) => {
               className={cx(
                 withBaseName(),
                 {
-                  [withBaseName("zebra")]: isZebra,
+                  [withBaseName("zebra")]: zebra,
                 },
                 className
               )}
@@ -659,7 +660,8 @@ export const Table = (props: TableProps) => {
                 hoverOverRowKey={hoverRowKey}
                 setHoverOverRowKey={setHoverRowKey}
                 midGap={midGap}
-                isZebra={isZebra}
+                zebra={zebra}
+                columnSeparators={columnSeparators}
               />
               <TopPart
                 columns={headVisibleColumns}
@@ -676,7 +678,8 @@ export const Table = (props: TableProps) => {
                 isRaised={isLeftRaised}
                 hoverOverRowKey={hoverRowKey}
                 setHoverOverRowKey={setHoverRowKey}
-                isZebra={isZebra}
+                zebra={zebra}
+                columnSeparators={columnSeparators}
               />
               <RightPart
                 rightRef={rightRef}
@@ -686,7 +689,8 @@ export const Table = (props: TableProps) => {
                 isRaised={isRightRaised}
                 hoverOverRowKey={hoverRowKey}
                 setHoverOverRowKey={setHoverRowKey}
-                isZebra={isZebra}
+                zebra={zebra}
+                columnSeparators={columnSeparators}
               />
               <TopLeftPart
                 onWheel={onWheel}

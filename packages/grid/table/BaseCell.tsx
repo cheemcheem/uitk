@@ -13,7 +13,15 @@ export function getCellId(rowKey: string, column: TableColumnModel) {
 }
 
 export const BaseCell: FC<TableCellProps> = function BaseCell(props) {
-  const { column, className, row, style, isFocused, children } = props;
+  const {
+    column,
+    className,
+    row,
+    style,
+    isFocused,
+    children,
+    columnSeparator,
+  } = props;
   return (
     <td
       id={getCellId(row.key, column)}
@@ -25,9 +33,9 @@ export const BaseCell: FC<TableCellProps> = function BaseCell(props) {
       style={style}
     >
       {isFocused ? <Cursor /> : null}
-      {/*{isColumnDivided ? (*/}
-      {/*  <div className={withBaseName("columnDivider")} />*/}
-      {/*) : null}*/}
+      {columnSeparator ? (
+        <div className={withBaseName("columnSeparator")} />
+      ) : null}
       <div className={withBaseName("valueContainer")}>{children}</div>
     </td>
   );

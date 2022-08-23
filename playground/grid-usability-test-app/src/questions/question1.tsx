@@ -255,7 +255,7 @@ export const TableExample1 = () => {
       rowData={exampleRows1}
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
-      isZebra={true}
+      zebra={true}
     >
       <RowSelectionColumn id={"rowSelection"} />
       <TableColumn

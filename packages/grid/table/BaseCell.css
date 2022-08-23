@@ -19,7 +19,7 @@
   background-color: var(--uitkTable-backgroundColor-secondary);
 }
 
-.uitkTableBaseCell-columnDivider {
+.uitkTableBaseCell-columnSeparator {
   position: absolute;
   top: 0;
   right: 0;

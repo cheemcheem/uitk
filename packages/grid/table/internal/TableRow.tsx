@@ -13,25 +13,27 @@ export interface TableRowProps {
   row: TableRowModel;
   isSelected?: boolean;
   isHoverOver?: boolean;
-  isZebra?: boolean;
+  zebra?: boolean;
   columns: TableColumnModel[];
   cursorColKey?: string;
   onMouseEnter?: MouseEventHandler<HTMLTableRowElement>;
   onMouseLeave?: MouseEventHandler<HTMLTableRowElement>;
   gap?: number;
+  columnSeparators?: boolean;
 }
 
 export const TableRow = function TableRow(props: TableRowProps) {
   const {
     row,
     isSelected,
-    isZebra,
+    zebra,
     isHoverOver,
     columns,
     onMouseEnter,
     onMouseLeave,
     cursorColKey,
     gap,
+    columnSeparators,
   } = props;
 
   if (!row.key) {
@@ -41,7 +43,7 @@ export const TableRow = function TableRow(props: TableRowProps) {
   return (
     <tr
       className={cn(withBaseName(), {
-        [withBaseName("zebra")]: isZebra,
+        [withBaseName("zebra")]: zebra,
         [withBaseName("hover")]: isHoverOver,
         [withBaseName("selected")]: isSelected,
       })}
@@ -65,6 +67,7 @@ export const TableRow = function TableRow(props: TableRowProps) {
             row={row}
             column={column}
             isFocused={isFocused}
+            columnSeparator={columnSeparators}
           >
             <CellValue column={column} row={row} value={value} />
           </Cell>

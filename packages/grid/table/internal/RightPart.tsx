@@ -16,7 +16,8 @@ export interface RightPartProps<T> {
   rows: TableRowModel[];
   hoverOverRowKey?: string;
   setHoverOverRowKey: (key: string | undefined) => void;
-  isZebra?: boolean;
+  zebra?: boolean;
+  columnSeparators?: boolean;
 }
 
 export function RightPart<T>(props: RightPartProps<T>) {
@@ -28,7 +29,8 @@ export function RightPart<T>(props: RightPartProps<T>) {
     rows,
     hoverOverRowKey,
     setHoverOverRowKey,
-    isZebra,
+    zebra,
+    columnSeparators,
   } = props;
 
   return (
@@ -46,7 +48,8 @@ export function RightPart<T>(props: RightPartProps<T>) {
             rows={rows}
             hoverRowKey={hoverOverRowKey}
             setHoverRowKey={setHoverOverRowKey}
-            isZebra={isZebra}
+            zebra={zebra}
+            columnSeparators={columnSeparators}
           />
         </table>
       </div>

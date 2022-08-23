@@ -10,11 +10,20 @@ export interface TableBodyProps {
   hoverRowKey?: string;
   setHoverRowKey: (key: string | undefined) => void;
   gap?: number;
-  isZebra?: boolean;
+  zebra?: boolean;
+  columnSeparators?: boolean;
 }
 
 export function TableBody(props: TableBodyProps) {
-  const { columns, rows, hoverRowKey, setHoverRowKey, gap, isZebra } = props;
+  const {
+    columns,
+    rows,
+    hoverRowKey,
+    setHoverRowKey,
+    gap,
+    zebra,
+    columnSeparators,
+  } = props;
 
   const { selRowKeys, selectRows, cursorRowKey, cursorColKey, moveCursor } =
     useSelectionContext();
@@ -56,9 +65,9 @@ export function TableBody(props: TableBodyProps) {
             isSelected={isSelected}
             cursorColKey={cursorKey}
             gap={gap}
-            isZebra={isZebra && row.index % 2 == 0}
+            zebra={zebra && row.index % 2 == 0}
+            columnSeparators={columnSeparators}
             // backgroundVariant={backgroundVariant}
-            // isColumnDivided={isColumnDivided}
           />
         );
       })}

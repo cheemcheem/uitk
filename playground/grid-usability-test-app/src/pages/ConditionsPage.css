@@ -1,0 +1,7 @@
+.setSelector {
+  margin-bottom: 81px;
+}
+
+.selectedCard {
+  border-color: var(--uitk-color-blue-500);
+}

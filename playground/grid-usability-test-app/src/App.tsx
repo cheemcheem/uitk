@@ -8,13 +8,39 @@ import { TestInstructionsPage } from "./pages/TestInstructionsPage";
 import { QuestionPage } from "./pages/QuestionPage";
 import { q1, q2, q3, q4, q5, q6, q7, q8, q9 } from "./pages/questionPageData";
 import { TestCompletePage } from "./pages/TestCompletePage";
+import { ConditionsPage } from "./pages/ConditionsPage";
+import { useState } from "react";
+
+const setNames = Array.from("ABCDEF").map((x) => ["Condition", x].join(" "));
+
+export interface Conditions {
+  theme: "dark" | "light";
+}
+
+const conditions: Conditions[] = [];
 
 function App(): JSX.Element {
+  const [selectedSet, setSelectedSet] = useState<number>(0);
+
+  const onSelectedSetChanged = (set: number) => {
+    setSelectedSet(set);
+  };
+
   return (
     <BrowserRouter>
       <ToolkitProvider density={"high"}>
         <Routes>
-          <Route path={"/"} element={<StartPage />} />
+          <Route
+            path={"/"}
+            element={
+              <ConditionsPage
+                setNames={setNames}
+                selectedSet={selectedSet}
+                onSelectedSetChange={onSelectedSetChanged}
+              />
+            }
+          />
+          <Route path={"/start"} element={<StartPage />} />
           <Route
             path={"/test-instructions"}
             element={<TestInstructionsPage />}

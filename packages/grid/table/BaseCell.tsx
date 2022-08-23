@@ -13,15 +13,7 @@ export function getCellId(rowKey: string, column: TableColumnModel) {
 }
 
 export const BaseCell: FC<TableCellProps> = function BaseCell(props) {
-  const {
-    column,
-    className,
-    row,
-    style,
-    isFocused,
-    children,
-    columnSeparator,
-  } = props;
+  const { column, className, row, style, isFocused, children } = props;
   return (
     <td
       id={getCellId(row.key, column)}
@@ -29,13 +21,16 @@ export const BaseCell: FC<TableCellProps> = function BaseCell(props) {
       data-column-index={column.index}
       aria-colindex={column.index}
       role="gridcell"
-      className={cn(withBaseName(), className)}
+      className={cn(
+        withBaseName(),
+        {
+          [withBaseName("editable")]: column.info.props.editable,
+        },
+        className
+      )}
       style={style}
     >
       {isFocused ? <Cursor /> : null}
-      {columnSeparator ? (
-        <div className={withBaseName("columnSeparator")} />
-      ) : null}
       <div className={withBaseName("valueContainer")}>{children}</div>
     </td>
   );

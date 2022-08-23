@@ -17,7 +17,6 @@ export interface LeftPartProps {
   hoverOverRowKey?: string;
   setHoverOverRowKey: (key: string | undefined) => void;
   zebra?: boolean;
-  columnSeparators?: boolean;
 }
 
 export function LeftPart(props: LeftPartProps) {
@@ -30,7 +29,6 @@ export function LeftPart(props: LeftPartProps) {
     hoverOverRowKey,
     setHoverOverRowKey,
     zebra,
-    columnSeparators,
   } = props;
 
   return (
@@ -49,7 +47,6 @@ export function LeftPart(props: LeftPartProps) {
             hoverRowKey={hoverOverRowKey}
             setHoverRowKey={setHoverOverRowKey}
             zebra={zebra}
-            columnSeparators={columnSeparators}
           />
         </table>
       </div>

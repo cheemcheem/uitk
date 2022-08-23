@@ -12,6 +12,7 @@ export const TableExample8 = () => {
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}
       zebra={true}
+      columnSeparators={true}
     >
       <RowSelectionColumn id={"rowSelection"} />
       <TableColumn
@@ -44,6 +45,7 @@ export const TableExample8 = () => {
         defaultWidth={78}
         getValue={(x) => x.notional}
         align="right"
+        editable={true}
       />
       <TableColumn
         name="Description"
@@ -57,6 +59,7 @@ export const TableExample8 = () => {
         defaultWidth={100}
         getValue={(x) => x["level(decimal)"]}
         align="right"
+        editable={true}
       />
       <TableColumn
         name="Trade Date"
@@ -87,6 +90,7 @@ export const TableExample8 = () => {
         id="traderName"
         defaultWidth={121}
         getValue={(x) => x.traderName}
+        editable={true}
       />
       <TableColumn
         name="Principal (BondCcy)"

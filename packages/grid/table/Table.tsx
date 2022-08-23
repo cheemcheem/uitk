@@ -474,6 +474,7 @@ export const Table = (props: TableProps) => {
                 withBaseName(),
                 {
                   [withBaseName("zebra")]: zebra,
+                  [withBaseName("columnSeparators")]: columnSeparators,
                 },
                 className
               )}
@@ -505,7 +506,6 @@ export const Table = (props: TableProps) => {
                 setHoverOverRowKey={setHoverRowKey}
                 midGap={midGap}
                 zebra={zebra}
-                columnSeparators={columnSeparators}
               />
               <TopPart
                 columns={headVisibleColumns}
@@ -523,7 +523,6 @@ export const Table = (props: TableProps) => {
                 hoverOverRowKey={hoverRowKey}
                 setHoverOverRowKey={setHoverRowKey}
                 zebra={zebra}
-                columnSeparators={columnSeparators}
               />
               <RightPart
                 rightRef={rightRef}
@@ -534,7 +533,6 @@ export const Table = (props: TableProps) => {
                 hoverOverRowKey={hoverRowKey}
                 setHoverOverRowKey={setHoverRowKey}
                 zebra={zebra}
-                columnSeparators={columnSeparators}
               />
               <TopLeftPart
                 onWheel={onWheel}

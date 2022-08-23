@@ -17,7 +17,6 @@ export interface RightPartProps<T> {
   hoverOverRowKey?: string;
   setHoverOverRowKey: (key: string | undefined) => void;
   zebra?: boolean;
-  columnSeparators?: boolean;
 }
 
 export function RightPart<T>(props: RightPartProps<T>) {
@@ -30,7 +29,6 @@ export function RightPart<T>(props: RightPartProps<T>) {
     hoverOverRowKey,
     setHoverOverRowKey,
     zebra,
-    columnSeparators,
   } = props;
 
   return (
@@ -49,7 +47,6 @@ export function RightPart<T>(props: RightPartProps<T>) {
             hoverRowKey={hoverOverRowKey}
             setHoverRowKey={setHoverOverRowKey}
             zebra={zebra}
-            columnSeparators={columnSeparators}
           />
         </table>
       </div>

@@ -19,7 +19,6 @@ export interface TableRowProps {
   onMouseEnter?: MouseEventHandler<HTMLTableRowElement>;
   onMouseLeave?: MouseEventHandler<HTMLTableRowElement>;
   gap?: number;
-  columnSeparators?: boolean;
 }
 
 export const TableRow = function TableRow(props: TableRowProps) {
@@ -33,7 +32,6 @@ export const TableRow = function TableRow(props: TableRowProps) {
     onMouseLeave,
     cursorColKey,
     gap,
-    columnSeparators,
   } = props;
 
   if (!row.key) {
@@ -67,7 +65,6 @@ export const TableRow = function TableRow(props: TableRowProps) {
             row={row}
             column={column}
             isFocused={isFocused}
-            columnSeparator={columnSeparators}
           >
             <CellValue column={column} row={row} value={value} />
           </Cell>

@@ -16,7 +16,6 @@ export interface MiddlePartProps<T> {
   setHoverOverRowKey: (key: string | undefined) => void;
   midGap: number;
   zebra?: boolean;
-  columnSeparators?: boolean;
 }
 
 export function MiddlePart<T>(props: MiddlePartProps<T>) {
@@ -29,7 +28,6 @@ export function MiddlePart<T>(props: MiddlePartProps<T>) {
     setHoverOverRowKey,
     midGap,
     zebra,
-    columnSeparators,
   } = props;
 
   return (
@@ -44,7 +42,6 @@ export function MiddlePart<T>(props: MiddlePartProps<T>) {
             setHoverRowKey={setHoverOverRowKey}
             gap={midGap}
             zebra={zebra}
-            columnSeparators={columnSeparators}
           />
         </table>
       </div>

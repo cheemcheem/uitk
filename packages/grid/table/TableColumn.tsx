@@ -18,7 +18,6 @@ export interface TableCellProps {
   style?: CSSProperties;
   isFocused?: boolean;
   children?: ReactNode;
-  columnSeparator?: boolean;
 }
 
 export interface TableCellValueProps {
@@ -44,6 +43,7 @@ export interface TableColumnProps {
   headerClassName?: string;
   headerComponent?: ComponentType<HeaderCellProps>;
   headerValueComponent?: ComponentType<TableHeaderValueProps>;
+  editable?: boolean;
 }
 
 export interface TableColumnInfo {

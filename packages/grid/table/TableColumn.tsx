@@ -30,6 +30,10 @@ export interface TableHeaderValueProps {
   column: TableColumnModel;
 }
 
+export interface TableEditorProps {
+  // TODO
+}
+
 export interface TableColumnProps {
   id: string;
   name?: string;
@@ -44,6 +48,7 @@ export interface TableColumnProps {
   headerComponent?: ComponentType<HeaderCellProps>;
   headerValueComponent?: ComponentType<TableHeaderValueProps>;
   editable?: boolean;
+  editorComponent?: ComponentType<TableEditorProps>;
 }
 
 export interface TableColumnInfo {

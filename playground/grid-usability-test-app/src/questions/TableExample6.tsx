@@ -1,14 +1,16 @@
 import {
+  ColumnGroup,
+  RowSelectionColumn,
   Table,
   TableColumn,
-  RowSelectionColumn,
-  ColumnGroup,
+  TableProps,
 } from "@jpmorganchase/uitk-grid/table";
-import { ExampleRow6, exampleRows6 } from "./rowData6";
+import { exampleRows6 } from "./rowData6";
 
-export const TableExample6 = () => {
+export const TableExample6 = (props: Partial<TableProps>) => {
   return (
     <Table
+      {...props}
       rowData={exampleRows6}
       rowKeyGetter={(x) => x.id}
       className={"exampleTable"}

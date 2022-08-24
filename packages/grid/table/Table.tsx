@@ -47,7 +47,8 @@ import "./Table.css";
 import { SelectionContext } from "./SelectionContext";
 import { ColumnGroupProps } from "./ColumnGroup";
 import { SizingContext } from "./SizingContext";
-import { LayoutContext } from "./LayoutContext"; // TODO remove
+import { LayoutContext } from "./LayoutContext";
+import { EditorContext } from "./EditorContext"; // TODO remove
 
 const withBaseName = makePrefixer("uitkTable");
 
@@ -136,6 +137,7 @@ export const Table = (props: TableProps) => {
   const [cursorColKey, setCursorColKey] = useState<string | undefined>(
     undefined
   );
+  const [editMode, setEditMode] = useState<boolean>(false);
 
   const rowIdxByKey = useRowIdxByKey(rowKeyGetter, rowData);
 
@@ -377,9 +379,12 @@ export const Table = (props: TableProps) => {
         case "End":
           moveCursor(rowData.length - 1, cursorColIdx);
           break;
+        case "F2":
+          setEditMode((x) => !x); // TODO
+          break;
       }
     },
-    [cursorRowIdx, cursorColIdx, moveCursor]
+    [cursorRowIdx, cursorColIdx, moveCursor, setEditMode]
   );
 
   const rows = useRowModels(rowKeyGetter, rowData, visRowRng);
@@ -461,6 +466,13 @@ export const Table = (props: TableProps) => {
     [totalHeight, totalWidth]
   );
 
+  const editorContext: EditorContext = useMemo(
+    () => ({
+      editMode,
+    }),
+    [editMode]
+  );
+
   // console.log(
   //   cols.map((c) => `"${c.info.props.name}": ${c.info.width}`).join("\n")
   // );
@@ -470,88 +482,90 @@ export const Table = (props: TableProps) => {
       <LayoutContext.Provider value={layoutContext}>
         <SelectionContext.Provider value={selectionContext}>
           <SizingContext.Provider value={sizingContext}>
-            {props.children}
-            <div
-              className={cx(
-                withBaseName(),
-                {
-                  [withBaseName("zebra")]: zebra,
-                  [withBaseName("columnSeparators")]: columnSeparators,
-                  [withBaseName("primaryBackground")]: variant === "primary",
-                  [withBaseName("secondaryBackground")]:
-                    variant === "secondary",
-                },
-                className
-              )}
-              style={style}
-              ref={rootRef}
-              tabIndex={0}
-              onKeyDown={onKeyDown}
-              data-name={"grid-root"}
-            >
-              <CellMeasure setRowHeight={setRowHeight} />
-              <Scrollable
-                scrollLeft={scrollLeft}
-                scrollTop={scrollTop}
-                scrollSource={scrollSource}
-                scroll={scroll}
-                scrollerRef={scrollableRef}
-                topRef={topRef}
-                rightRef={rightRef}
-                bottomRef={bottomRef}
-                leftRef={leftRef}
-                middleRef={middleRef}
-              />
-              <MiddlePart
-                middleRef={middleRef}
-                onWheel={onWheel}
-                columns={bodyVisibleColumns}
-                rows={rows}
-                hoverOverRowKey={hoverRowKey}
-                setHoverOverRowKey={setHoverRowKey}
-                midGap={midGap}
-                zebra={zebra}
-              />
-              <TopPart
-                columns={headVisibleColumns}
-                columnGroups={visColGrps}
-                topRef={topRef}
-                onWheel={onWheel}
-                midGap={midGap}
-              />
-              <LeftPart
-                leftRef={leftRef}
-                onWheel={onWheel}
-                columns={leftCols}
-                rows={rows}
-                isRaised={isLeftRaised}
-                hoverOverRowKey={hoverRowKey}
-                setHoverOverRowKey={setHoverRowKey}
-                zebra={zebra}
-              />
-              <RightPart
-                rightRef={rightRef}
-                onWheel={onWheel}
-                columns={rightCols}
-                rows={rows}
-                isRaised={isRightRaised}
-                hoverOverRowKey={hoverRowKey}
-                setHoverOverRowKey={setHoverRowKey}
-                zebra={zebra}
-              />
-              <TopLeftPart
-                onWheel={onWheel}
-                columns={leftCols}
-                columnGroups={leftGroups}
-                isRaised={isLeftRaised}
-              />
-              <TopRightPart
-                onWheel={onWheel}
-                columns={rightCols}
-                columnGroups={rightGroups}
-                isRaised={isRightRaised}
-              />
-            </div>
+            <EditorContext.Provider value={editorContext}>
+              {props.children}
+              <div
+                className={cx(
+                  withBaseName(),
+                  {
+                    [withBaseName("zebra")]: zebra,
+                    [withBaseName("columnSeparators")]: columnSeparators,
+                    [withBaseName("primaryBackground")]: variant === "primary",
+                    [withBaseName("secondaryBackground")]:
+                      variant === "secondary",
+                  },
+                  className
+                )}
+                style={style}
+                ref={rootRef}
+                tabIndex={0}
+                onKeyDown={onKeyDown}
+                data-name={"grid-root"}
+              >
+                <CellMeasure setRowHeight={setRowHeight} />
+                <Scrollable
+                  scrollLeft={scrollLeft}
+                  scrollTop={scrollTop}
+                  scrollSource={scrollSource}
+                  scroll={scroll}
+                  scrollerRef={scrollableRef}
+                  topRef={topRef}
+                  rightRef={rightRef}
+                  bottomRef={bottomRef}
+                  leftRef={leftRef}
+                  middleRef={middleRef}
+                />
+                <MiddlePart
+                  middleRef={middleRef}
+                  onWheel={onWheel}
+                  columns={bodyVisibleColumns}
+                  rows={rows}
+                  hoverOverRowKey={hoverRowKey}
+                  setHoverOverRowKey={setHoverRowKey}
+                  midGap={midGap}
+                  zebra={zebra}
+                />
+                <TopPart
+                  columns={headVisibleColumns}
+                  columnGroups={visColGrps}
+                  topRef={topRef}
+                  onWheel={onWheel}
+                  midGap={midGap}
+                />
+                <LeftPart
+                  leftRef={leftRef}
+                  onWheel={onWheel}
+                  columns={leftCols}
+                  rows={rows}
+                  isRaised={isLeftRaised}
+                  hoverOverRowKey={hoverRowKey}
+                  setHoverOverRowKey={setHoverRowKey}
+                  zebra={zebra}
+                />
+                <RightPart
+                  rightRef={rightRef}
+                  onWheel={onWheel}
+                  columns={rightCols}
+                  rows={rows}
+                  isRaised={isRightRaised}
+                  hoverOverRowKey={hoverRowKey}
+                  setHoverOverRowKey={setHoverRowKey}
+                  zebra={zebra}
+                />
+                <TopLeftPart
+                  onWheel={onWheel}
+                  columns={leftCols}
+                  columnGroups={leftGroups}
+                  isRaised={isLeftRaised}
+                />
+                <TopRightPart
+                  onWheel={onWheel}
+                  columns={rightCols}
+                  columnGroups={rightGroups}
+                  isRaised={isRightRaised}
+                />
+              </div>
+            </EditorContext.Provider>
           </SizingContext.Provider>
         </SelectionContext.Provider>
       </LayoutContext.Provider>

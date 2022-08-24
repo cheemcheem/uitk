@@ -37,7 +37,7 @@ export const ConditionsPage: FC<ConditionsPageProps> = (props) => {
         {setNames.map((setName, idx) => {
           const isSelected = idx === selectedSet;
           return (
-            <FlexItem>
+            <FlexItem key={idx}>
               <Card
                 className={isSelected ? "selectedCard" : undefined}
                 onClick={() => onSelectedSetChange(idx)}

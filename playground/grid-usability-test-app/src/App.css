@@ -2,3 +2,10 @@
   text-align: center;
 }
 
+.uitk-dark, .uitk-light {
+  color: var(--uitk-text-primary-foreground);
+}
+
+.uitk-dark {
+  color-scheme: dark;
+}

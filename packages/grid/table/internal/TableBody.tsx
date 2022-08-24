@@ -3,6 +3,7 @@ import { TableRow } from "./TableRow";
 import { TableColumnModel, TableRowModel } from "../Table";
 import { getCellPosition, getRowKeyAttribute } from "./utils";
 import { useSelectionContext } from "../SelectionContext";
+import { useEditorContext } from "../EditorContext";
 
 export interface TableBodyProps {
   columns: TableColumnModel[];
@@ -18,6 +19,8 @@ export function TableBody(props: TableBodyProps) {
 
   const { selRowKeys, selectRows, cursorRowKey, cursorColKey, moveCursor } =
     useSelectionContext();
+
+  const { editMode } = useEditorContext();
 
   const onRowMouseEnter: MouseEventHandler<HTMLTableRowElement> = (event) => {
     const target = event.target as HTMLElement;
@@ -45,6 +48,7 @@ export function TableBody(props: TableBodyProps) {
       {rows.map((row) => {
         const isSelected = selRowKeys.has(row.key);
         const cursorKey = cursorRowKey === row.key ? cursorColKey : undefined;
+        const editorColKey = editMode ? cursorKey : undefined;
         return (
           <TableRow
             key={row.key}
@@ -57,6 +61,7 @@ export function TableBody(props: TableBodyProps) {
             cursorColKey={cursorKey}
             gap={gap}
             zebra={zebra && row.index % 2 == 0}
+            editorColKey={editorColKey}
             // backgroundVariant={backgroundVariant}
           />
         );

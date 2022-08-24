@@ -137,7 +137,9 @@ export const Table = (props: TableProps) => {
   const [cursorColKey, setCursorColKey] = useState<string | undefined>(
     undefined
   );
+
   const [editMode, setEditMode] = useState<boolean>(false);
+  const [editorText, setEditorText] = useState<string>("");
 
   const rowIdxByKey = useRowIdxByKey(rowKeyGetter, rowData);
 
@@ -352,6 +354,16 @@ export const Table = (props: TableProps) => {
     ]
   );
 
+  const startEditMode = () => {
+    const r = rowData[cursorRowIdx];
+    const c = cols[cursorColIdx];
+    // if (c.info.props.editable) {
+    const v = c.info.props.getValue!(r);
+    setEditorText(v);
+    setEditMode(true);
+    // }
+  };
+
   const onKeyDown: KeyboardEventHandler<HTMLDivElement> = useCallback(
     (event) => {
       switch (event.key) {
@@ -380,11 +392,11 @@ export const Table = (props: TableProps) => {
           moveCursor(rowData.length - 1, cursorColIdx);
           break;
         case "F2":
-          setEditMode((x) => !x); // TODO
+          startEditMode();
           break;
       }
     },
-    [cursorRowIdx, cursorColIdx, moveCursor, setEditMode]
+    [cursorRowIdx, cursorColIdx, moveCursor, startEditMode]
   );
 
   const rows = useRowModels(rowKeyGetter, rowData, visRowRng);
@@ -469,8 +481,10 @@ export const Table = (props: TableProps) => {
   const editorContext: EditorContext = useMemo(
     () => ({
       editMode,
+      editorText,
+      setEditorText,
     }),
-    [editMode]
+    [editMode, editorText, setEditorText]
   );
 
   // console.log(

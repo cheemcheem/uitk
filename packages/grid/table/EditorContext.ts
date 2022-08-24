@@ -2,6 +2,8 @@ import { createContext, useContext } from "react";
 
 export interface EditorContext {
   editMode?: boolean;
+  editorText?: string;
+  setEditorText: (text: string) => void;
 }
 
 export const EditorContext = createContext<EditorContext | undefined>(

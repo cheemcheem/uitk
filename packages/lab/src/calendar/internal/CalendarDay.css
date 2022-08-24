@@ -1,9 +1,9 @@
 .uitk-light .uitkCalendarDay {
-  --calendar-day-current-day-border-color: var(--uitk-color-grey-900);
+  --calendar-day-current-day-borderColor: var(--uitk-color-grey-900);
 }
 
 .uitk-dark .uitkCalendarDay {
-  --calendar-day-current-day-border-color: var(--uitk-color-white);
+  --calendar-day-current-day-borderColor: var(--uitk-color-white);
 }
 
 /* TODO: Design need to align characteristics for CalendarDay */
@@ -23,15 +23,15 @@
 
   --calendar-day-selected-background: var(--uitk-selectable-background-selected);
   --calendar-day-selected-text-color: var(--uitk-selectable-foreground-selected);
-  --calendar-day-selected-focused-outline-color: var(--uitk-color-white);
+  --calendar-day-selected-focused-outlineColor: var(--uitk-color-white);
 
   --calendar-day-selected-start-background: var(--uitk-selectable-background-selected);
   --calendar-day-selected-start-text-color: var(--uitk-selectable-foreground-selected);
-  --calendar-day-selected-start-focused-outline-color: var(--uitk-color-white);
+  --calendar-day-selected-start-focused-outlineColor: var(--uitk-color-white);
 
   --calendar-day-selected-end-background: var(--uitk-selectable-background-selected);
   --calendar-day-selected-end-text-color: var(--uitk-selectable-foreground-selected);
-  --calendar-day-selected-end-focused-outline-color: var(--uitk-color-white);
+  --calendar-day-selected-end-focused-outlineColor: var(--uitk-color-white);
 
   --calendar-day-selected-span-background: var(--uitk-selectable-background-hover);
   --calendar-day-selected-span-text-color: var(--uitk-selectable-foreground);
@@ -45,7 +45,7 @@
   /* Focus */
   --calendar-day-focused-outline: var(--uitk-focused-outline);
   --calendar-day-size: var(--uitk-size-base);
-  --calendar-day-font-size: var(--uitk-text-fontSize);
+  --calendar-day-fontSize: var(--uitk-text-fontSize);
 }
 
 .uitkCalendarDay {
@@ -53,7 +53,7 @@
   height: var(--calendar-day-size);
   color: var(--calendar-day-text-color);
   background-color: var(--calendar-day-background);
-  font-size: var(--calendar-day-font-size);
+  font-size: var(--calendar-day-fontSize);
   border: 0;
   cursor: pointer;
   position: relative;
@@ -84,7 +84,7 @@
 }
 
 .uitkCalendarDay-today {
-  border: 1px solid var(--calendar-day-current-day-border-color);
+  border: 1px solid var(--calendar-day-current-day-borderColor);
 }
 
 .uitkCalendarDay-selectedSpan,
@@ -124,15 +124,15 @@
 }
 
 .uitkCalendarDay-selected:focus-visible {
-  outline-color: var(--calendar-day-selected-focused-outline-color);
+  outline-color: var(--calendar-day-selected-focused-outlineColor);
 }
 
 .uitkCalendarDay-selectedStart:focus-visible {
-  outline-color: var(--calendar-day-selected-start-focused-outline-color);
+  outline-color: var(--calendar-day-selected-start-focused-outlineColor);
 }
 
 .uitkCalendarDay-selectedEnd:focus-visible {
-  outline-color: var(--calendar-day-selected-end-focused-outline-color);
+  outline-color: var(--calendar-day-selected-end-focused-outlineColor);
 }
 
 .uitkCalendarDay-unselectableLowEmphasis,

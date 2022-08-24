@@ -96,6 +96,18 @@ It requires no configuration, but is included in your app when you use a Toolkit
 AriaAnnouncer is ever required, only the outermost instance of ToolkitProvider will instantiate the AriaAnnouncer. If you use
 nested ToolkitProviders, these will not inject further instances of AriaAnnouncer.
 
+## useDensity
+
+You can use `useDensity` hook to access the currently active density of your app in the provided scope.
+
+## useTheme
+
+You can use `useTheme` hook to access the value of the currently active themes.
+
+## useBreakpoints
+
+You can use `useBreakpoints` hook to access the current value of `breakpoints` ToolkitProvider context. This is a low-leve hook that is used internally in other hooks such as useResponsiveProp.
+
 <!-- #### Portal
 
 Note: `Portal` is not yet ready for release, the notes below are placeholder only. Need something to position the portal example

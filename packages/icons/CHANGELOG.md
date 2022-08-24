@@ -1,5 +1,11 @@
 # @jpmorganchase/uitk-icons
 
+## 0.4.0
+
+### Minor Changes
+
+- fa82ff30: Add new icon and update existing onces with updated design
+
 ## 0.3.0
 
 ### Minor Changes

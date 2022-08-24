@@ -1,5 +1,25 @@
 # @jpmorganchase/uitk-core
 
+## 0.5.0
+
+### Minor Changes
+
+- d4a9ab74: Change checkbox -solid-color token to -fill
+- 728f0327: Checkbox:
+  -box-size -> -height and -width
+
+  Pagination/Accordion:
+  —pagination and —accordion prefixes added
+
+  Tree node:
+  —padding-left token changed to padding-left attribute: fixed typo
+
+  Dialog/Toolbar:
+  background-color changed to background as standard
+
+  Skip link:
+  —skipLink-- (double dash) changed to —skipLink-
+
 ## 0.4.0
 
 ### Minor Changes

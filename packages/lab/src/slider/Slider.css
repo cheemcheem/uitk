@@ -139,7 +139,7 @@
 
 .uitkSliderMarkLabels-label {
   color: var(--uitkSlider-label-text-color, var(--uitk-text-secondary-foreground));
-  font-size: var(--uitkSlider-label-font-size, var(--uitk-text-caption-fontSize));
+  font-size: var(--uitkSlider-label-fontSize, var(--uitk-text-caption-fontSize));
   margin-top: var(--uitkSlider-label-margin-top);
   line-height: var(--uitkSlider-label-line-height, var(--uitk-text-lineHeight));
 
@@ -200,7 +200,7 @@
 
 .uitkSlider-label {
   color: var(--uitkSlider-label-text-color, var(--uitk-text-secondary-foreground));
-  font-size: var(--uitkSlider-label-font-size, var(--uitk-text-caption-fontSize));
+  font-size: var(--uitkSlider-label-fontSize, var(--uitk-text-caption-fontSize));
   margin-top: var(--uitkSlider-label-margin-top);
   line-height: var(--uitkSlider-label-line-height, var(--uitk-text-lineHeight));
 
@@ -212,5 +212,5 @@
 }
 
 .backwardsCompat.uitkSlider {
-  --uitkSlider-label-font-size: var(--backwardsCompat-text-caption-fontSize);
+  --uitkSlider-label-fontSize: var(--backwardsCompat-text-caption-fontSize);
 }
